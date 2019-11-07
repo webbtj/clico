@@ -1,0 +1,25 @@
+{
+    "name": "webbtj/clico",
+    "description": "Expressive API to colour and format text output to stdOut for CLI interactions",
+    "keywords": ["command line", "cli", "text", "output", "stdout", "color", "colour"],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "TJ Webb",
+            "email": "webb.tj@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webbtj\\Clico\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}

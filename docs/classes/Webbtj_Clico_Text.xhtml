@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Webbtj\Clico\Text</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Webbtj_Clico">Webbtj\Clico</a>
+          </li>
+          <li class="separator">Text</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Text.php.xhtml#line11">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Webbtj\Clico\</small>Text</h1>
+        <h4>The Clico Text class allows for text decorating for the CLI stdOut.</h4>
+        <p>Text and backgrounds can be coloured; text weight can be set as well as<br/>Other effects such as blinking, highlighting, and underlining.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Text
+            {<br/><ul class="none"><li>// members</li><li>public static string <a href="#members">$BACKGROUND_OPENED</a> =
+                        'background';
+                    </li><li>public static integer <a href="#members">$BG_DARK</a> =
+                        40;
+                    </li><li>public static integer <a href="#members">$BG_DEFAULT</a> =
+                        49;
+                    </li><li>public static integer <a href="#members">$BG_LIGHT</a> =
+                        100;
+                    </li><li>public static integer <a href="#members">$BLINK</a> =
+                        5;
+                    </li><li>public static string <a href="#members">$DARK_SHADE</a> =
+                        'dark';
+                    </li><li>public static integer <a href="#members">$FG_DARK</a> =
+                        30;
+                    </li><li>public static integer <a href="#members">$FG_DEFAULT</a> =
+                        39;
+                    </li><li>public static integer <a href="#members">$FG_LIGHT</a> =
+                        90;
+                    </li><li>public static string <a href="#members">$FOREGROUND_OPENED</a> =
+                        'foreground';
+                    </li><li>public static integer <a href="#members">$HIDDEN</a> =
+                        8;
+                    </li><li>public static integer <a href="#members">$HIGHLIGHT</a> =
+                        7;
+                    </li><li>public static string <a href="#members">$LIGHT_SHADE</a> =
+                        'light';
+                    </li><li>public static integer <a href="#members">$UNDERLINE</a> =
+                        4;
+                    </li><li>public static integer <a href="#members">$WEIGHT_HEAVY</a> =
+                        1;
+                    </li><li>public static integer <a href="#members">$WEIGHT_LIGHT</a> =
+                        2;
+                    </li><li>public static integer <a href="#members">$WEIGHT_NORMAL</a> =
+                        0;
+                    </li><li>private  <a href="#members">$background</a>;
+                    </li><li>private  <a href="#members">$blink</a>;
+                    </li><li>private  <a href="#members">$foreground</a>;
+                    </li><li>private  <a href="#members">$hidden</a>;
+                    </li><li>private  <a href="#members">$highlight</a>;
+                    </li><li>private  <a href="#members">$opened</a>;
+                    </li><li>private integer <a href="#members">$repeat</a> =
+                        1;
+                    </li><li>private  <a href="#members">$shade</a>;
+                    </li><li>private  <a href="#members">$string</a>;
+                    </li><li>private  <a href="#members">$underline</a>;
+                    </li><li>private  <a href="#members">$weight</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/__construct.xhtml">__construct</a>()
+                    </li><li>public string <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/__toString.xhtml">__toString</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/b.xhtml">b</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/background.xhtml">background</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/black.xhtml">black</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/blink.xhtml">blink</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/blue.xhtml">blue</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/bold.xhtml">bold</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/cyan.xhtml">cyan</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/dark.xhtml">dark</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/darken.xhtml">darken</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/default.xhtml">default</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/dim.xhtml">dim</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/flash.xhtml">flash</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/foreground.xhtml">foreground</a>()
+                    </li><li>public string <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/getText.xhtml">getText</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/green.xhtml">green</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/heavyWeight.xhtml">heavyWeight</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/hidden.xhtml">hidden</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/hide.xhtml">hide</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/highlight.xhtml">highlight</a>()
+                    </li><li>public integer <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/length.xhtml">length</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/light.xhtml">light</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/lighten.xhtml">lighten</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/lightWeight.xhtml">lightWeight</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/magenta.xhtml">magenta</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/normal.xhtml">normal</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/normalWeight.xhtml">normalWeight</a>()
+                    </li><li>public string <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/rainbow.xhtml">rainbow</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/red.xhtml">red</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/repeat.xhtml">repeat</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/strong.xhtml">strong</a>()
+                    </li><li>public string <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/testPattern.xhtml">testPattern</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/text.xhtml">text</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/thin.xhtml">thin</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/u.xhtml">u</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/underline.xhtml">underline</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/white.xhtml">white</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/yellow.xhtml">yellow</a>()
+                    </li><li>private Text <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/assignColour.xhtml">assignColour</a>()
+                    </li><li>private Array <a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/colourMap.xhtml">colourMap</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="background">
+              <strong>$background</strong>
+            </li>
+            <li id="blink">
+              <strong>$blink</strong>
+            </li>
+            <li id="foreground">
+              <strong>$foreground</strong>
+            </li>
+            <li id="hidden">
+              <strong>$hidden</strong>
+            </li>
+            <li id="highlight">
+              <strong>$highlight</strong>
+            </li>
+            <li id="opened">
+              <strong>$opened</strong>
+            </li>
+            <li id="repeat">
+              <strong>$repeat</strong>
+            </li>
+            <li id="shade">
+              <strong>$shade</strong>
+            </li>
+            <li id="string">
+              <strong>$string</strong>
+            </li>
+            <li id="underline">
+              <strong>$underline</strong>
+            </li>
+            <li id="weight">
+              <strong>$weight</strong>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="BACKGROUND_OPENED">
+              <strong>$BACKGROUND_OPENED</strong>
+            </li>
+            <li id="BG_DARK">
+              <strong>$BG_DARK</strong>
+            </li>
+            <li id="BG_DEFAULT">
+              <strong>$BG_DEFAULT</strong>
+            </li>
+            <li id="BG_LIGHT">
+              <strong>$BG_LIGHT</strong>
+            </li>
+            <li id="BLINK">
+              <strong>$BLINK</strong>
+            </li>
+            <li id="DARK_SHADE">
+              <strong>$DARK_SHADE</strong>
+            </li>
+            <li id="FG_DARK">
+              <strong>$FG_DARK</strong>
+            </li>
+            <li id="FG_DEFAULT">
+              <strong>$FG_DEFAULT</strong>
+            </li>
+            <li id="FG_LIGHT">
+              <strong>$FG_LIGHT</strong>
+            </li>
+            <li id="FOREGROUND_OPENED">
+              <strong>$FOREGROUND_OPENED</strong>
+            </li>
+            <li id="HIDDEN">
+              <strong>$HIDDEN</strong>
+            </li>
+            <li id="HIGHLIGHT">
+              <strong>$HIGHLIGHT</strong>
+            </li>
+            <li id="LIGHT_SHADE">
+              <strong>$LIGHT_SHADE</strong>
+            </li>
+            <li id="UNDERLINE">
+              <strong>$UNDERLINE</strong>
+            </li>
+            <li id="WEIGHT_HEAVY">
+              <strong>$WEIGHT_HEAVY</strong>
+            </li>
+            <li id="WEIGHT_LIGHT">
+              <strong>$WEIGHT_LIGHT</strong>
+            </li>
+            <li id="WEIGHT_NORMAL">
+              <strong>$WEIGHT_NORMAL</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="assignColour"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/assignColour.xhtml">assignColour()</a>
+                — Set the colour property</li>
+            <li id="colourMap"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/colourMap.xhtml">colourMap()</a>
+                — The index of available colours and their numeric values</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/__construct.xhtml">__construct()</a>
+                — Constructor. Can optionally set the text on instantiation.</li>
+            <li id="__toString"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/__toString.xhtml">__toString()</a>
+                — Renders decorated text.</li>
+            <li id="b"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/b.xhtml">b()</a>
+                — Alias of `heavyWeight()`</li>
+            <li id="background"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/background.xhtml">background()</a>
+                — Direct future colour methods to affect the background colour.</li>
+            <li id="black"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/black.xhtml">black()</a>
+                — Set the colour (background or foreground) to black</li>
+            <li id="blink"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/blink.xhtml">blink()</a>
+                — Make the text blink/flash</li>
+            <li id="blue"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/blue.xhtml">blue()</a>
+                — Set the colour (background or foreground) to blue</li>
+            <li id="bold"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/bold.xhtml">bold()</a>
+                — Alias of `heavyWeight()`</li>
+            <li id="cyan"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/cyan.xhtml">cyan()</a>
+                — Set the colour (background or foreground) to cyan</li>
+            <li id="dark"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/dark.xhtml">dark()</a>
+                — Make future colour assignments their dark variant</li>
+            <li id="darken"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/darken.xhtml">darken()</a>
+                — Make the most recent colour assignment (background/foreground) its dark variant.</li>
+            <li id="default"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/default.xhtml">default()</a>
+                — Set the active colour property to its default. Pass $setAll = true to set both the background and foreground colours to their default.</li>
+            <li id="dim"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/dim.xhtml">dim()</a>
+                — Alias of `lightWeight()`</li>
+            <li id="flash"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/flash.xhtml">flash()</a>
+                — Alias of `blink()`</li>
+            <li id="foreground"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/foreground.xhtml">foreground()</a>
+                — Direct future colour methods to affect the foreground colour.</li>
+            <li id="getText"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/getText.xhtml">getText()</a>
+                — Get the undecorated text value</li>
+            <li id="green"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/green.xhtml">green()</a>
+                — Set the colour (background or foreground) to green</li>
+            <li id="heavyWeight"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/heavyWeight.xhtml">heavyWeight()</a>
+                — Make the text bold</li>
+            <li id="hidden"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/hidden.xhtml">hidden()</a>
+                — Make the text invisible</li>
+            <li id="hide"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/hide.xhtml">hide()</a>
+                — Alias of `hidden()`</li>
+            <li id="highlight"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/highlight.xhtml">highlight()</a>
+                — Make the text highlighted (invert background and foregroune colours)</li>
+            <li id="length"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/length.xhtml">length()</a>
+                — Get the length of the undecorated string</li>
+            <li id="light"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/light.xhtml">light()</a>
+                — Make future colour assignments their light variant</li>
+            <li id="lightWeight"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/lightWeight.xhtml">lightWeight()</a>
+                — Make the text light weight/thin/dim</li>
+            <li id="lighten"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/lighten.xhtml">lighten()</a>
+                — Make the most recent colour assignment (background/foreground) its light variant.</li>
+            <li id="magenta"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/magenta.xhtml">magenta()</a>
+                — Set the colour (background or foreground) to magenta</li>
+            <li id="normal"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/normal.xhtml">normal()</a>
+                — Alias of `normalWeight()`</li>
+            <li id="normalWeight"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/normalWeight.xhtml">normalWeight()</a>
+                — Make the text normal/default weight</li>
+            <li id="rainbow"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/rainbow.xhtml">rainbow()</a>
+                — Experimental: Make the text multi-coloured</li>
+            <li id="red"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/red.xhtml">red()</a>
+                — Set the colour (background or foreground) to red</li>
+            <li id="repeat"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/repeat.xhtml">repeat()</a>
+                — Repeat the text property when rendering</li>
+            <li id="strong"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/strong.xhtml">strong()</a>
+                — Alias of `heavyWeight()`</li>
+            <li id="testPattern"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/testPattern.xhtml">testPattern()</a>
+                — Experimental: Output a test pattern</li>
+            <li id="text"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/text.xhtml">text()</a>
+                — Set the (undecorated) string property</li>
+            <li id="thin"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/thin.xhtml">thin()</a>
+                — Alias of `lightWeight()`</li>
+            <li id="u"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/u.xhtml">u()</a>
+                — Alias of `underline()`</li>
+            <li id="underline"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/underline.xhtml">underline()</a>
+                — Make the text underlined</li>
+            <li id="white"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/white.xhtml">white()</a>
+                — Set the colour (background or foreground) to white/grey</li>
+            <li id="yellow"><a title="Webbtj\Clico\Text" href="../classes/Webbtj_Clico_Text/yellow.xhtml">yellow()</a>
+                — Set the colour (background or foreground) to yellow</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.12.0 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

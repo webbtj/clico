@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Webbtj\Clico\Column</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Webbtj_Clico">Webbtj\Clico</a>
+          </li>
+          <li class="separator">Column</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Column.php.xhtml#line12">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Webbtj\Clico\</small>Column</h1>
+        <h4>The Clico Column class is utilized by the Table and Row classes.</h4>
+        <p>It souldn't need to be accessed directly. It it used to fill Rows.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Column
+            {<br/><ul class="none"><li>// members</li><li>private integer <a href="#members">$height</a> =
+                        1;
+                    </li><li>private array <a href="#members">$lines</a> =
+                        ;
+                    </li><li>private  <a href="#members">$text</a> =
+                        NULL;
+                    </li><li>private  <a href="#members">$textWriter</a>;
+                    </li><li>private integer <a href="#members">$width</a> =
+                        0;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/__construct.xhtml">__construct</a>()
+                    </li><li>public integer <a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/getHeight.xhtml">getHeight</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/getLine.xhtml">getLine</a>()
+                    </li><li>public Array <a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/getLines.xhtml">getLines</a>()
+                    </li><li>public string <a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/getText.xhtml">getText</a>()
+                    </li><li>public Text <a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/getTextWriter.xhtml">getTextWriter</a>()
+                    </li><li>public integer <a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/getWidth.xhtml">getWidth</a>()
+                    </li><li>public void <a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/setText.xhtml">setText</a>()
+                    </li><li>public void <a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/setWidth.xhtml">setWidth</a>()
+                    </li><li>public void <a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/verticalPad.xhtml">verticalPad</a>()
+                    </li><li>private void <a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/populateLines.xhtml">populateLines</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="height">
+              <strong>$height</strong>
+            </li>
+            <li id="lines">
+              <strong>$lines</strong>
+            </li>
+            <li id="text">
+              <strong>$text</strong>
+            </li>
+            <li id="textWriter">
+              <strong>$textWriter</strong>
+            </li>
+            <li id="width">
+              <strong>$width</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="populateLines"><a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/populateLines.xhtml">populateLines()</a>
+                — Split the `$text` property into substrings to fit within the set width</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/__construct.xhtml">__construct()</a>
+                — Constructor. Sets the `$text` property on instantiation.</li>
+            <li id="getHeight"><a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/getHeight.xhtml">getHeight()</a>
+                — Gets the height of the column (number of lines)</li>
+            <li id="getLine"><a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/getLine.xhtml">getLine()</a>
+                — Gets a single line</li>
+            <li id="getLines"><a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/getLines.xhtml">getLines()</a>
+                — Returns all of the lines of text, undecorated</li>
+            <li id="getText"><a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/getText.xhtml">getText()</a>
+                — Gets the undecorated text</li>
+            <li id="getTextWriter"><a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/getTextWriter.xhtml">getTextWriter()</a>
+                — Gets the Text class instance</li>
+            <li id="getWidth"><a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/getWidth.xhtml">getWidth()</a>
+                — Gets the width of the column in characters</li>
+            <li id="setText"><a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/setText.xhtml">setText()</a>
+                — Sets the `$text` property</li>
+            <li id="setWidth"><a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/setWidth.xhtml">setWidth()</a>
+                — Set the column width in characters</li>
+            <li id="verticalPad"><a title="Webbtj\Clico\Column" href="../classes/Webbtj_Clico_Column/verticalPad.xhtml">verticalPad()</a>
+                — Add additional blank lines to the end of the column</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.12.0 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>
