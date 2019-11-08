@@ -1,0 +1,170 @@
+<?php
+
+namespace Webbtj\Clico;
+
+use Webbtj\Clico\Text;
+
+/**
+ * The Clico Column class is utilized by the Table and Row classes.
+ * 
+ * It souldn't need to be accessed directly. It it used to fill Rows.
+ */
+class Column
+{
+    private $height = 1;
+    private $lines = [];
+    private $text = null;
+    private $textWriter;
+    private $width = 0;
+
+    /**
+     * Constructor. Sets the `$text` property on instantiation.
+     *
+     * @param String $text
+     */
+    public function __construct(String $text)
+    {
+        $this->textWriter = new Text();
+        $this->setText($text);
+    }
+
+    /**
+     * Gets the height of the column (number of lines)
+     *
+     * @return integer
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * Gets a single line
+     *
+     * @param integer $i
+     * @return Text
+     */
+    public function getLine(int $i)
+    {
+        if(isset($this->lines[$i])){
+            $line = $this->textWriter->text(str_pad($this->lines[$i], $this->width-1));
+            return $line;
+        }
+    }
+
+    /**
+     * Returns all of the lines of text, undecorated
+     *
+     * @return Array
+     */
+    public function getLines()
+    {
+        return $this->lines;
+    }
+
+    /**
+     * Gets the undecorated text
+     *
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->text;
+    }
+
+    /**
+     * Gets the Text class instance
+     *
+     * @return Text
+     */
+    public function getTextWriter()
+    {
+        return $this->textWriter;
+    }
+
+    /**
+     * Gets the width of the column in characters
+     *
+     * @return integer
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * Sets the `$text` property
+     *
+     * @param String $text
+     * @return void
+     */
+    public function setText(String $text)
+    {
+        $this->text = $text;
+        $this->populateLines();
+    }
+
+    /**
+     * Set the column width in characters
+     *
+     * @param integer $width
+     * @return void
+     */
+    public function setWidth(int $width)
+    {
+        $this->width = $width;
+        $this->populateLines();
+    }
+
+    /**
+     * Add additional blank lines to the end of the column
+     *
+     * @param integer $height
+     * @return void
+     */
+    public function verticalPad(int $height)
+    {
+        while(count($this->lines) < $height){
+            $this->lines[] = '';
+        }
+        $this->height = $height;
+    }
+
+    /**
+     * Split the `$text` property into substrings to fit within the set width
+     *
+     * @return void
+     */
+    private function populateLines()
+    {
+        $this->lines = [];
+        if($this->width){
+            $lines = preg_split("/(?=\W+)/", $this->text);
+            $currentLine = '';
+            foreach($lines as $line){
+                if(strlen($line) > $this->width - 2){
+                    if($currentLine){
+                        $this->lines[] = $currentLine;
+                        $currentLine = '';
+                    }
+                    //split up this long string
+                    $fragments = str_split($line, $this->width - 2);
+                    foreach($fragments as $fragment){
+                        $this->lines[] = $fragment;
+                    }
+                }else{
+                    if(strlen($currentLine) + strlen($line) <= $this->width - 2){
+                        $currentLine .= $line;
+                    }else{
+                        $this->lines[] = $currentLine;
+                        $currentLine = $line;
+                    }
+                }
+            }
+            if($currentLine){
+                $this->lines[] = $currentLine;
+            }
+        }
+        $this->height = max(1, count($this->lines));
+    }
+}

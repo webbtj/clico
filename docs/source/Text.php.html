@@ -1,4 +1,40 @@
-<?php
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
 
 namespace Webbtj\Clico;
 
@@ -6,7 +42,7 @@ namespace Webbtj\Clico;
  * The Clico Text class allows for text decorating for the CLI stdOut.
  * 
  * Text and backgrounds can be coloured; text weight can be set as well as
- * Other effects such as blinking, highlighting, and underlining.
+ * other effects such as blinking, highlighting, and underlining.
  */
 class Text
 {
@@ -40,60 +76,6 @@ class Text
     private $underline;
     private $weight;
 
-    /**
-     * Constructor.
-     * 
-     * Can optionally set the text on instantiation.
-     *
-     * @param String $string
-     */
-    public function __construct(String $string = null)
-    {
-        $this->opened = static::$FOREGROUND_OPENED;
-        $this->shade = static::$DARK_SHADE;
-
-        if($string){
-            $this->text($string);
-        }
-    }
-
-    /**
-     * Renders decorated text.
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        $codes = [];
-        if(isset($this->weight)){
-            $codes[] = $this->weight;
-        }
-        if(isset($this->foreground)){
-            $codes[] = $this->foreground;
-        }
-        if(isset($this->background)){
-            $codes[] = $this->background;
-        }
-        if($this->underline){
-            $codes[] = static::$UNDERLINE;
-        }
-        if($this->blink){
-            $codes[] = static::$BLINK;
-        }
-        if($this->highlight){
-            $codes[] = static::$HIGHLIGHT;
-        }
-        if($this->hidden){
-            $codes[] = static::$HIDDEN;
-        }
-
-        return sprintf(
-            "\e[%sm%s\e[0m",
-            implode(';', $codes),
-            str_repeat($this->string, $this->repeat)
-        );
-        
-    }
 
     /**
      * Alias of `heavyWeight()`
@@ -102,7 +84,7 @@ class Text
      */
     public function b()
     {
-        return $this->heavyWeight();
+        return $this-&gt;heavyWeight();
     }
 
     /**
@@ -112,7 +94,7 @@ class Text
      */
     public function background()
     {
-        $this->opened = static::$BACKGROUND_OPENED;
+        $this-&gt;opened = static::$BACKGROUND_OPENED;
         return $this;
     }
 
@@ -123,7 +105,7 @@ class Text
      */
     public function black()
     {
-        return $this->assignColour($this->colourMap()['black']);
+        return $this-&gt;assignColour($this-&gt;colourMap()['black']);
     }
 
     /**
@@ -132,7 +114,7 @@ class Text
      * @return Text
      */
     public function blink(){
-        $this->blink = true;
+        $this-&gt;blink = true;
         return $this;
     }
 
@@ -143,7 +125,7 @@ class Text
      */
     public function blue()
     {
-        return $this->assignColour($this->colourMap()['blue']);
+        return $this-&gt;assignColour($this-&gt;colourMap()['blue']);
     }
 
     /**
@@ -153,7 +135,7 @@ class Text
      */
     public function bold()
     {
-        return $this->heavyWeight();
+        return $this-&gt;heavyWeight();
     }
 
     /**
@@ -163,7 +145,7 @@ class Text
      */
     public function cyan()
     {
-        return $this->assignColour($this->colourMap()['cyan']);
+        return $this-&gt;assignColour($this-&gt;colourMap()['cyan']);
     }
 
     /**
@@ -173,7 +155,7 @@ class Text
      */
     public function dark()
     {
-        $this->shade = static::$DARK_SHADE;
+        $this-&gt;shade = static::$DARK_SHADE;
         return $this;
     }
 
@@ -184,15 +166,15 @@ class Text
      */
     public function darken()
     {
-        if($this->opened == static::$FOREGROUND_OPENED){
-            if($this->foreground >= static::$FG_LIGHT){
+        if($this-&gt;opened == static::$FOREGROUND_OPENED){
+            if($this-&gt;foreground &gt;= static::$FG_LIGHT){
                 $diff = static::$FG_LIGHT - static::$FG_DARK;
-                $this->foreground -= $diff;
+                $this-&gt;foreground -= $diff;
             }
-        }elseif($this->opened == static::$BACKGROUND_OPENED){
-            if($this->background >= static::$BG_LIGHT){
+        }elseif($this-&gt;opened == static::$BACKGROUND_OPENED){
+            if($this-&gt;background &gt;= static::$BG_LIGHT){
                 $diff = static::$BG_LIGHT - static::$BG_DARK;
-                $this->background -= $diff;
+                $this-&gt;background -= $diff;
             }
         }
         return $this;
@@ -205,13 +187,13 @@ class Text
      * @param boolean $setAll
      * @return Text
      */
-    public function setDefault($setAll = false)
+    public function default($setAll = false)
     {
-        if($this->opened == static::$FOREGROUND_OPENED || $setAll){
-            $this->foreground = static::$FG_DEFAULT;
+        if($this-&gt;opened == static::$FOREGROUND_OPENED || $setAll){
+            $this-&gt;foreground = static::$FG_DEFAULT;
         }
-        if($this->opened == static::$BACKGROUND_OPENED || $setAll){
-            $this->background = static::$BG_DEFAULT;
+        if($this-&gt;opened == static::$BACKGROUND_OPENED || $setAll){
+            $this-&gt;background = static::$BG_DEFAULT;
         }
     }
 
@@ -222,7 +204,7 @@ class Text
      */
     public function dim()
     {
-        return $this->lightWeight();
+        return $this-&gt;lightWeight();
     }
 
     /**
@@ -232,7 +214,7 @@ class Text
      */
     public function flash()
     {
-        return $this->blink();
+        return $this-&gt;blink();
     }
 
     /**
@@ -242,7 +224,7 @@ class Text
      */
     public function foreground()
     {
-        $this->opened = static::$FOREGROUND_OPENED;
+        $this-&gt;opened = static::$FOREGROUND_OPENED;
         return $this;
     }
     
@@ -253,7 +235,7 @@ class Text
      */
     public function getText()
     {
-        return $this->string;
+        return $this-&gt;string;
     }
 
     /**
@@ -263,7 +245,7 @@ class Text
      */
     public function green()
     {
-        return $this->assignColour($this->colourMap()['green']);
+        return $this-&gt;assignColour($this-&gt;colourMap()['green']);
     }
 
     /**
@@ -273,7 +255,7 @@ class Text
      */
     public function heavyWeight()
     {
-        $this->weight = static::$WEIGHT_HEAVY;
+        $this-&gt;weight = static::$WEIGHT_HEAVY;
         return $this;
     }
 
@@ -284,7 +266,7 @@ class Text
      */
     public function hidden()
     {
-        $this->hidden = true;
+        $this-&gt;hidden = true;
         return $this;
     }
 
@@ -295,7 +277,7 @@ class Text
      */
     public function hide()
     {
-        return $this->hidden();
+        return $this-&gt;hidden();
     }
     
     /**
@@ -305,7 +287,7 @@ class Text
      */
     public function highlight()
     {
-        $this->highlight = true;
+        $this-&gt;highlight = true;
         return $this;
     }
 
@@ -316,7 +298,7 @@ class Text
      */
     public function length()
     {
-        return strlen($this->string);
+        return strlen($this-&gt;string);
     }
 
     /**
@@ -326,7 +308,7 @@ class Text
      */
     public function light()
     {
-        $this->shade = static::$LIGHT_SHADE;
+        $this-&gt;shade = static::$LIGHT_SHADE;
         return $this;
     }
 
@@ -337,15 +319,15 @@ class Text
      */
     public function lighten()
     {
-        if($this->opened == static::$FOREGROUND_OPENED){
-            if($this->foreground < static::$FG_LIGHT){
+        if($this-&gt;opened == static::$FOREGROUND_OPENED){
+            if($this-&gt;foreground &lt; static::$FG_LIGHT){
                 $diff = static::$FG_LIGHT - static::$FG_DARK;
-                $this->foreground += $diff;
+                $this-&gt;foreground += $diff;
             }
-        }elseif($this->opened == static::$BACKGROUND_OPENED){
-            if($this->background < static::$BG_LIGHT){
+        }elseif($this-&gt;opened == static::$BACKGROUND_OPENED){
+            if($this-&gt;background &lt; static::$BG_LIGHT){
                 $diff = static::$BG_LIGHT - static::$BG_DARK;
-                $this->background += $diff;
+                $this-&gt;background += $diff;
             }
         }
         return $this;
@@ -358,7 +340,7 @@ class Text
      */
     public function lightWeight()
     {
-        $this->weight = static::$WEIGHT_LIGHT;
+        $this-&gt;weight = static::$WEIGHT_LIGHT;
         return $this;
     }
 
@@ -369,7 +351,7 @@ class Text
      */
     public function magenta()
     {
-        return $this->assignColour($this->colourMap()['magenta']);
+        return $this-&gt;assignColour($this-&gt;colourMap()['magenta']);
     }
 
     /**
@@ -379,7 +361,7 @@ class Text
      */
     public function normal()
     {
-        return $this->normalWeight();
+        return $this-&gt;normalWeight();
     }
 
     /**
@@ -389,7 +371,7 @@ class Text
      */
     public function normalWeight()
     {
-        $this->weight = static::$WEIGHT_NORMAL;
+        $this-&gt;weight = static::$WEIGHT_NORMAL;
         return $this;
     }
 
@@ -400,13 +382,13 @@ class Text
      */
     public function rainbow()
     {
-        $letters = str_split($this->string);
-        $foregroundColours = array_keys($this->colourMap());
-        $backgroundColours = array_reverse(array_keys($this->colourMap()));
-        foreach($letters as &$letter){
+        $letters = str_split($this-&gt;string);
+        $foregroundColours = array_keys($this-&gt;colourMap());
+        $backgroundColours = array_reverse(array_keys($this-&gt;colourMap()));
+        foreach($letters as &amp;$letter){
             $letter = new Text($letter);
             call_user_func_array([$letter, current($foregroundColours)], []);
-            $letter->background();
+            $letter-&gt;background();
             call_user_func_array([$letter, current($backgroundColours)], []);
             next($foregroundColours) === false ? reset($foregroundColours) : null;
             next($backgroundColours) === false ? reset($backgroundColours) : null;
@@ -421,7 +403,7 @@ class Text
      */
     public function red()
     {
-        return $this->assignColour($this->colourMap()['red']);
+        return $this-&gt;assignColour($this-&gt;colourMap()['red']);
     }
 
     /**
@@ -432,7 +414,7 @@ class Text
      */
     public function repeat(int $repeat)
     {
-        $this->repeat = $repeat;
+        $this-&gt;repeat = $repeat;
         return $this;
     }
 
@@ -443,7 +425,7 @@ class Text
      */
     public function strong()
     {
-        return $this->heavyWeight();
+        return $this-&gt;heavyWeight();
     }
 
     /**
@@ -455,12 +437,12 @@ class Text
     public function testPattern($width = 10)
     {
         $output = [];
-        for($i = 0; $i <= ($width * 3); $i++){
-            foreach(array_keys($this->colourMap()) as $colour){
-                $output[] = (new Text)->text(' ')->repeat($width)->background()->dark()->{$colour}();
-                $output[] = (new Text)->text(' ')->repeat($width)->background()->light()->{$colour}();
+        for($i = 0; $i &lt;= ($width * 3); $i++){
+            foreach(array_keys($this-&gt;colourMap()) as $colour){
+                $output[] = (new Text)-&gt;text(' ')-&gt;repeat($width)-&gt;background()-&gt;dark()-&gt;{$colour}();
+                $output[] = (new Text)-&gt;text(' ')-&gt;repeat($width)-&gt;background()-&gt;light()-&gt;{$colour}();
             }
-            $output[] = "\n";
+            $output[] = &quot;\n&quot;;
         }
         return implode('', $output);
     }
@@ -473,7 +455,7 @@ class Text
      */
     public function text(String $string)
     {
-        $this->string = $string;
+        $this-&gt;string = $string;
         return $this;
     }
 
@@ -484,7 +466,7 @@ class Text
      */
     public function thin()
     {
-        return $this->lightWeight();
+        return $this-&gt;lightWeight();
     }
 
     /**
@@ -494,7 +476,7 @@ class Text
      */
     public function u()
     {
-        return $this->underline();
+        return $this-&gt;underline();
     }
 
     /**
@@ -504,7 +486,7 @@ class Text
      */
     public function underline()
     {
-        $this->underline = true;
+        $this-&gt;underline = true;
         return $this;
     }
 
@@ -515,7 +497,7 @@ class Text
      */
     public function white()
     {
-        return $this->assignColour($this->colourMap()['white']);
+        return $this-&gt;assignColour($this-&gt;colourMap()['white']);
     }
 
     /**
@@ -525,7 +507,7 @@ class Text
      */
     public function yellow()
     {
-        return $this->assignColour($this->colourMap()['yellow']);
+        return $this-&gt;assignColour($this-&gt;colourMap()['yellow']);
     }
 
     /**
@@ -537,19 +519,19 @@ class Text
     private function assignColour(int $colour)
     {
         $static = '';
-        if($this->opened == static::$FOREGROUND_OPENED){
+        if($this-&gt;opened == static::$FOREGROUND_OPENED){
             $static .= 'FG_';
-        }elseif($this->opened == static::$BACKGROUND_OPENED){
+        }elseif($this-&gt;opened == static::$BACKGROUND_OPENED){
             $static .= 'BG_';
         }
 
-        if($this->shade == static::$LIGHT_SHADE){
+        if($this-&gt;shade == static::$LIGHT_SHADE){
             $static .= 'LIGHT';
-        }elseif($this->shade == static::$DARK_SHADE){
+        }elseif($this-&gt;shade == static::$DARK_SHADE){
             $static .= 'DARK';
         }
 
-        $this->{$this->opened} = static::${$static} + $colour;
+        $this-&gt;{$this-&gt;opened} = static::${$static} + $colour;
 
         return $this;
     }
@@ -562,15 +544,23 @@ class Text
     private function colourMap()
     {
         return [
-            'black' => 0,
-            'red' => 1,
-            'green' => 2,
-            'yellow' => 3,
-            'blue' => 4,
-            'magenta' => 5,
-            'cyan' => 6,
-            'white' => 7,
+            'black' =&gt; 0,
+            'red' =&gt; 1,
+            'green' =&gt; 2,
+            'yellow' =&gt; 3,
+            'blue' =&gt; 4,
+            'magenta' =&gt; 5,
+            'cyan' =&gt; 6,
+            'white' =&gt; 7,
         ];
     }
 
-}
+}</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

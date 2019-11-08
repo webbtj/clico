@@ -1,0 +1,214 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+
+namespace Webbtj\Clico;
+
+use Webbtj\Clico\Text;
+
+/**
+ * The Clico Column class is utilized by the Table and Row classes.
+ * 
+ * It souldn't need to be accessed directly. It it used to fill Rows.
+ */
+class Column
+{
+    private $height = 1;
+    private $lines = [];
+    private $text = null;
+    private $textWriter;
+    private $width = 0;
+
+    /**
+     * Constructor. Sets the `$text` property on instantiation.
+     *
+     * @param String $text
+     */
+    public function __construct(String $text)
+    {
+        $this-&gt;textWriter = new Text();
+        $this-&gt;setText($text);
+    }
+
+    /**
+     * Gets the height of the column (number of lines)
+     *
+     * @return integer
+     */
+    public function getHeight()
+    {
+        return $this-&gt;height;
+    }
+
+    /**
+     * Gets a single line
+     *
+     * @param integer $i
+     * @return Text
+     */
+    public function getLine(int $i)
+    {
+        if(isset($this-&gt;lines[$i])){
+            $line = $this-&gt;textWriter-&gt;text(str_pad($this-&gt;lines[$i], $this-&gt;width-1));
+            return $line;
+        }
+    }
+
+    /**
+     * Returns all of the lines of text, undecorated
+     *
+     * @return Array
+     */
+    public function getLines()
+    {
+        return $this-&gt;lines;
+    }
+
+    /**
+     * Gets the undecorated text
+     *
+     * @return string
+     */
+    public function getText()
+    {
+        return $this-&gt;text;
+    }
+
+    /**
+     * Gets the Text class instance
+     *
+     * @return Text
+     */
+    public function getTextWriter()
+    {
+        return $this-&gt;textWriter;
+    }
+
+    /**
+     * Gets the width of the column in characters
+     *
+     * @return integer
+     */
+    public function getWidth()
+    {
+        return $this-&gt;width;
+    }
+
+    /**
+     * Sets the `$text` property
+     *
+     * @param String $text
+     * @return void
+     */
+    public function setText(String $text)
+    {
+        $this-&gt;text = $text;
+        $this-&gt;populateLines();
+    }
+
+    /**
+     * Set the column width in characters
+     *
+     * @param integer $width
+     * @return void
+     */
+    public function setWidth(int $width)
+    {
+        $this-&gt;width = $width;
+        $this-&gt;populateLines();
+    }
+
+    /**
+     * Add additional blank lines to the end of the column
+     *
+     * @param integer $height
+     * @return void
+     */
+    public function verticalPad(int $height)
+    {
+        while(count($this-&gt;lines) &lt; $height){
+            $this-&gt;lines[] = '';
+        }
+        $this-&gt;height = $height;
+    }
+
+    /**
+     * Split the `$text` property into substrings to fit within the set width
+     *
+     * @return void
+     */
+    private function populateLines()
+    {
+        $this-&gt;lines = [];
+        if($this-&gt;width){
+            $lines = preg_split(&quot;/(?=\W+)/&quot;, $this-&gt;text);
+            $currentLine = '';
+            foreach($lines as $line){
+                if(strlen($line) &gt; $this-&gt;width - 2){
+                    if($currentLine){
+                        $this-&gt;lines[] = $currentLine;
+                        $currentLine = '';
+                    }
+                    //split up this long string
+                    $fragments = str_split($line, $this-&gt;width - 2);
+                    foreach($fragments as $fragment){
+                        $this-&gt;lines[] = $fragment;
+                    }
+                }else{
+                    if(strlen($currentLine) + strlen($line) &lt;= $this-&gt;width - 2){
+                        $currentLine .= $line;
+                    }else{
+                        $this-&gt;lines[] = $currentLine;
+                        $currentLine = $line;
+                    }
+                }
+            }
+            if($currentLine){
+                $this-&gt;lines[] = $currentLine;
+            }
+        }
+        $this-&gt;height = max(1, count($this-&gt;lines));
+    }
+}</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

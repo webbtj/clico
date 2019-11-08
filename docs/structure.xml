@@ -1,0 +1,1836 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="Clico" version="2.8.5">
+  <partials/>
+  <file path="Row.php" generated-path="Row.html" hash="00030d2dd7b86db984328f2c800dd140" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Column">\Webbtj\Clico\Column</namespace-alias>
+    <namespace-alias name="Text">\Webbtj\Clico\Text</namespace-alias>
+    <class final="false" abstract="false" namespace="Webbtj\Clico" line="13" package="Default">
+      <extends/>
+      <name>Row</name>
+      <full_name>\Webbtj\Clico\Row</full_name>
+      <docblock line="13">
+        <description>The Clico Row class is utilized by the Table class.</description>
+        <long-description>It souldn't need to be accessed directly. It it used to fill Tables.</long-description>
+        <tag name="package" line="13" description="Default"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="15" package="Default">
+        <name>$columns</name>
+        <full_name>\Webbtj\Clico\Row::columns</full_name>
+        <default>array()</default>
+        <docblock line="15">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="16" package="Default">
+        <name>$distributedWidth</name>
+        <full_name>\Webbtj\Clico\Row::distributedWidth</full_name>
+        <default>0</default>
+        <docblock line="16">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="17" package="Default">
+        <name>$headerLineCharacter</name>
+        <full_name>\Webbtj\Clico\Row::headerLineCharacter</full_name>
+        <default></default>
+        <docblock line="17">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="18" package="Default">
+        <name>$height</name>
+        <full_name>\Webbtj\Clico\Row::height</full_name>
+        <default></default>
+        <docblock line="18">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="19" package="Default">
+        <name>$isHeader</name>
+        <full_name>\Webbtj\Clico\Row::isHeader</full_name>
+        <default>false</default>
+        <docblock line="19">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="20" package="Default">
+        <name>$pipeCharacter</name>
+        <full_name>\Webbtj\Clico\Row::pipeCharacter</full_name>
+        <default></default>
+        <docblock line="20">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="21" package="Default">
+        <name>$rowLineCharacter</name>
+        <full_name>\Webbtj\Clico\Row::rowLineCharacter</full_name>
+        <default></default>
+        <docblock line="21">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="28" package="Default">
+        <name>__construct</name>
+        <full_name>\Webbtj\Clico\Row::__construct()</full_name>
+        <docblock line="28">
+          <description>Constructor. Can optionally set the values of the columns</description>
+          <long-description></long-description>
+          <tag name="param" line="28" description="" type="Array" variable="$data">
+            <type>Array</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$data</name>
+          <default>null</default>
+          <type>Array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="42" package="Default">
+        <name>__toString</name>
+        <full_name>\Webbtj\Clico\Row::__toString()</full_name>
+        <docblock line="42">
+          <description>Renders the columns, decorated.</description>
+          <long-description></long-description>
+          <tag name="return" line="42" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="68" package="Default">
+        <name>addColumn</name>
+        <full_name>\Webbtj\Clico\Row::addColumn()</full_name>
+        <docblock line="68">
+          <description>Adds a column to the Row</description>
+          <long-description></long-description>
+          <tag name="param" line="68" description="" type="\Webbtj\Clico\Column" variable="$column">
+            <type>\Webbtj\Clico\Column</type>
+          </tag>
+          <tag name="return" line="68" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$column</name>
+          <default></default>
+          <type>\Webbtj\Clico\Column</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="80" package="Default">
+        <name>distributeColumns</name>
+        <full_name>\Webbtj\Clico\Row::distributeColumns()</full_name>
+        <docblock line="80">
+          <description>Sets the widths of each column to fit within `$maxWidth`</description>
+          <long-description></long-description>
+          <tag name="param" line="80" description="" type="integer" variable="$maxWidth">
+            <type>integer</type>
+          </tag>
+          <tag name="param" line="80" description="" type="integer" variable="$numCols">
+            <type>integer</type>
+          </tag>
+          <tag name="return" line="80" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$maxWidth</name>
+          <default></default>
+          <type>integer</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$numCols</name>
+          <default></default>
+          <type>integer</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="100" package="Default">
+        <name>getColumns</name>
+        <full_name>\Webbtj\Clico\Row::getColumns()</full_name>
+        <docblock line="100">
+          <description>Get the columns</description>
+          <long-description></long-description>
+          <tag name="return" line="100" description="" type="Array">
+            <type>Array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="110" package="Default">
+        <name>getHeaderLineCharacter</name>
+        <full_name>\Webbtj\Clico\Row::getHeaderLineCharacter()</full_name>
+        <docblock line="110">
+          <description>Get the character (decorated) used to separate the header row from the body</description>
+          <long-description></long-description>
+          <tag name="return" line="110" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="121" package="Default">
+        <name>getLineCharacter</name>
+        <full_name>\Webbtj\Clico\Row::getLineCharacter()</full_name>
+        <docblock line="121">
+          <description>Get the character (decorated) used to separate this row from other.</description>
+          <long-description>This will return either the `headerLineCharacter` or the `rowLineCharacter`</long-description>
+          <tag name="return" line="121" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="131" package="Default">
+        <name>getPipeCharacter</name>
+        <full_name>\Webbtj\Clico\Row::getPipeCharacter()</full_name>
+        <docblock line="131">
+          <description>Get the character (decorated) used to separate columns</description>
+          <long-description></long-description>
+          <tag name="return" line="131" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="141" package="Default">
+        <name>getRowLineCharacter</name>
+        <full_name>\Webbtj\Clico\Row::getRowLineCharacter()</full_name>
+        <docblock line="141">
+          <description>Get the character (decorated) used to separate body rows</description>
+          <long-description></long-description>
+          <tag name="return" line="141" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="151" package="Default">
+        <name>getWidth</name>
+        <full_name>\Webbtj\Clico\Row::getWidth()</full_name>
+        <docblock line="151">
+          <description>Get the number of columns wide</description>
+          <long-description></long-description>
+          <tag name="return" line="151" description="" type="integer">
+            <type>integer</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="161" package="Default">
+        <name>isHeader</name>
+        <full_name>\Webbtj\Clico\Row::isHeader()</full_name>
+        <docblock line="161">
+          <description>Check if this Row is the header row</description>
+          <long-description></long-description>
+          <tag name="return" line="161" description="" type="boolean">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="172" package="Default">
+        <name>populate</name>
+        <full_name>\Webbtj\Clico\Row::populate()</full_name>
+        <docblock line="172">
+          <description>Put data into Columns</description>
+          <long-description></long-description>
+          <tag name="param" line="172" description="" type="Array" variable="$data">
+            <type>Array</type>
+          </tag>
+          <tag name="return" line="172" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$data</name>
+          <default></default>
+          <type>Array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="184" package="Default">
+        <name>setHeader</name>
+        <full_name>\Webbtj\Clico\Row::setHeader()</full_name>
+        <docblock line="184">
+          <description>Set this Row as the Table header</description>
+          <long-description></long-description>
+          <tag name="return" line="184" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="195" package="Default">
+        <name>setHeaderLineCharacter</name>
+        <full_name>\Webbtj\Clico\Row::setHeaderLineCharacter()</full_name>
+        <docblock line="195">
+          <description>Set the (decorated) character used to separate the header row from the body</description>
+          <long-description></long-description>
+          <tag name="param" line="195" description="" type="\Webbtj\Clico\Text" variable="$line">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+          <tag name="return" line="195" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$line</name>
+          <default></default>
+          <type>\Webbtj\Clico\Text</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="206" package="Default">
+        <name>setPipeCharacter</name>
+        <full_name>\Webbtj\Clico\Row::setPipeCharacter()</full_name>
+        <docblock line="206">
+          <description>Set the (decorated) character used to separate columns</description>
+          <long-description></long-description>
+          <tag name="param" line="206" description="" type="\Webbtj\Clico\Text" variable="$pipe">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+          <tag name="return" line="206" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$pipe</name>
+          <default></default>
+          <type>\Webbtj\Clico\Text</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="217" package="Default">
+        <name>setRowLineCharacter</name>
+        <full_name>\Webbtj\Clico\Row::setRowLineCharacter()</full_name>
+        <docblock line="217">
+          <description>Set the (decorated) charater used to separate body rows</description>
+          <long-description></long-description>
+          <tag name="param" line="217" description="" type="\Webbtj\Clico\Text" variable="$line">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+          <tag name="return" line="217" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$line</name>
+          <default></default>
+          <type>\Webbtj\Clico\Text</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="227" package="Default">
+        <name>unsetHeader</name>
+        <full_name>\Webbtj\Clico\Row::unsetHeader()</full_name>
+        <docblock line="227">
+          <description>Make the row not the header</description>
+          <long-description></long-description>
+          <tag name="return" line="227" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="237" package="Default">
+        <name>verticalConform</name>
+        <full_name>\Webbtj\Clico\Row::verticalConform()</full_name>
+        <docblock line="237">
+          <description>Make all columns in the row the same height (stretch shorter columns)</description>
+          <long-description></long-description>
+          <tag name="return" line="237" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="15" code="PPC:ERR-50007">No summary for property $columns</error>
+      <error line="16" code="PPC:ERR-50007">No summary for property $distributedWidth</error>
+      <error line="17" code="PPC:ERR-50007">No summary for property $headerLineCharacter</error>
+      <error line="18" code="PPC:ERR-50007">No summary for property $height</error>
+      <error line="19" code="PPC:ERR-50007">No summary for property $isHeader</error>
+      <error line="20" code="PPC:ERR-50007">No summary for property $pipeCharacter</error>
+      <error line="21" code="PPC:ERR-50007">No summary for property $rowLineCharacter</error>
+    </parse_markers>
+    <source>eJytWN1v2zYQf/dfcQiMRY4Te31dmnSFH5YBG1AkAfrQFA0t0REXmRREKq435H/fkaIkihJt50NAEIs83t3vvqmPn/I0H404WVOZk5jCV7pcqn/uFhmLxfloVMru0t1CZOWan/c3bulPhQfmJycjOIHblIJZh2uxgTgjUgKTUCqWsX9pAsstKCS5JcuMVtszfUz//alAijJL+LECTpFWCVhSIHFMpcTXhBU0Vtl2pimZglJWNCuWZRVDw2s+qqSi/NF/I8AnL9gTURTGscEg4QK+fT/vbiVMqoItS0WTryxRKdL86pGklCS0+ItxukhJQWJFix4Fe0iVt8jklTmIHFckk9Tbzlke5FeIjSfO7BtT6+cEFoKj3mWsRDGDBeEgcsUEJ1m2BUmVsfUTyUoqQazMm7WBZVDz+T1HEWv4XBRki8YgitideaVRuUSfwqrksWYPP37EteDIOYMQeZllE3Omsr1+2Coy25N2ST9jlTJ5dpmLvMwQrqU5b2ieRyOPtOSIqbJmZAmfeya5phz3pQv2FBIaiwKFJDMfeEFVWXDQ3ucPe0ArcWPIIh/hWJQqLxXiPzpqASAgmWoH4vrxcbu+EkU0ZibCMDzgYw3Phg+uTaeerfAIJXEaWco6kImsg9qjd5WaXdREZ5cPVGmFUPwEZo0HuiHYY6T9h+qivgNSukC1rIqpldTwjSZnlwXNKVGRq41JtmgCZ/DB0Qg3vrhKRU5YtOERfnOgH93xIzemXFC12n5gOoZrkQU52Qiyp0Jh+TlJ0F82InXZ0vGpa1S17yViVW1rv/nB+iRYsjNUSZJUHKIuo17cdsLp23doQiUE44aqKrU22nGmqujAdHCtsDRvGDLmcD9ek5/Gw/fDMBlX9AFLY0MX2uflGpHIFxuiLeuVIWSELFtxp2BeLfeAdcKtwRCRpwdttpolzBt+nYwPpe8jXFzCL8NZPN5YeatM6JqBorxEmM83KcNOSjIUkGwdvEnlIcizUjsMe3D1jj+wUeol7BbR4xTT7gSQcYetYRpBFLLA1Ko2weIVRWPLxegHQ5XIEE+nXd29lA2JurDHu4ebGiLrGmI18jO0H8J/2L4Y6IQ2tExb2xlbWKTqoPIjpy4JHXeHUqrRp652EDXtatJMOZLqlMCpQJNWowjgfACrQqzN2lIk2wAWPaLtg3LVn272wArOQ+8AEaO0ASfwZFH3bRwwTSjjyGe1oUzvG/b3Ayrdg7Cb/jTVq0kvsNZL7NQMgJ+c9jZobvjNobj21A1PPC+07u64PwS915t3oh+Yb9+MQIe6jo+3YOibdyeM/ii+Gwm2gCXCwPZYF3ssTzSgr21z+1S2s9KwnrEoufIaTDBiFimNH3EEqjJN39SY9ApLQNWlEBklfKeqdcAfmBchJb/gCGZuFWgeYSeig+8th48Izf3DYeIr3vRvo09w6rbA2umL041VvB56Jwc0qBsTQ9YxRDoX5so9AdfsRepcnoYnHeeqinc7umMGNDq5Odpm7psaVuVOnb8wzjDfXo+xm9wtxwD0gc6hpzp94p3MsPPiXemna+VrEHfrccsrgLVTkjVKvfBilIMgg5X5PRzbK9l7vepX7X0u/Zs8VvGqA5UL5cTua5Ou881ib9o5X4gC2hGcfOqWglesWln9X5K11lZ/RIAIx2iq8GImU1Fo5HVLeC2OJ1ooFpNsIThWw3UfixV8AR8OuvcMF9CGCV6nIvt22vl8cWXWon4d3S0vdMOqOdfwvpCkljsoofOpRoeT+80PXfb8P71fEzM=</source>
+  </file>
+  <file path="Table.php" generated-path="Table.html" hash="3beda555e21b55f62c4e0ecda085ac51" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Row">\Webbtj\Clico\Row</namespace-alias>
+    <namespace-alias name="Text">\Webbtj\Clico\Text</namespace-alias>
+    <class final="false" abstract="false" namespace="Webbtj\Clico" line="13" package="Default">
+      <extends/>
+      <name>Table</name>
+      <full_name>\Webbtj\Clico\Table</full_name>
+      <docblock line="13">
+        <description>The Clico Table class allows for formatting tabular data for the CLI stdOut.</description>
+        <long-description>It utilizes the Text class to allow for decorating text for the CLI stdOut.</long-description>
+        <tag name="package" line="13" description="Default"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="15" package="Default">
+        <name>$accessColumn</name>
+        <full_name>\Webbtj\Clico\Table::accessColumn</full_name>
+        <default></default>
+        <docblock line="15">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="16" package="Default">
+        <name>$accessRow</name>
+        <full_name>\Webbtj\Clico\Table::accessRow</full_name>
+        <default></default>
+        <docblock line="16">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="17" package="Default">
+        <name>$headerLineCharacter</name>
+        <full_name>\Webbtj\Clico\Table::headerLineCharacter</full_name>
+        <default>'='</default>
+        <docblock line="17">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="18" package="Default">
+        <name>$pipeCharacter</name>
+        <full_name>\Webbtj\Clico\Table::pipeCharacter</full_name>
+        <default>'|'</default>
+        <docblock line="18">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="19" package="Default">
+        <name>$rowLineCharacter</name>
+        <full_name>\Webbtj\Clico\Table::rowLineCharacter</full_name>
+        <default>'-'</default>
+        <docblock line="19">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="20" package="Default">
+        <name>$rows</name>
+        <full_name>\Webbtj\Clico\Table::rows</full_name>
+        <default>array()</default>
+        <docblock line="20">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="29" package="Default">
+        <name>__call</name>
+        <full_name>\Webbtj\Clico\Table::__call()</full_name>
+        <docblock line="29">
+          <description>A catch-all used to send Text decoration methods down to table column(s)</description>
+          <long-description></long-description>
+          <tag name="param" line="29" description="" type="string" variable="$method">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="29" description="" type="Array" variable="$args">
+            <type>Array</type>
+          </tag>
+          <tag name="return" line="29" description="" type="\Webbtj\Clico\Table">
+            <type>\Webbtj\Clico\Table</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$method</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$args</name>
+          <default></default>
+          <type>Array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="54" package="Default">
+        <name>__construct</name>
+        <full_name>\Webbtj\Clico\Table::__construct()</full_name>
+        <docblock line="54">
+          <description>Constructor. Can optionally populate the data. Can optionally set the
+first row of data as the header row.</description>
+          <long-description></long-description>
+          <tag name="param" line="54" description="" type="Array" variable="$data">
+            <type>Array</type>
+          </tag>
+          <tag name="param" line="54" description="" type="boolean" variable="$firstRowAsHeader">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$data</name>
+          <default>null</default>
+          <type>Array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$firstRowAsHeader</name>
+          <default>true</default>
+          <type>boolean</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="73" package="Default">
+        <name>__toString</name>
+        <full_name>\Webbtj\Clico\Table::__toString()</full_name>
+        <docblock line="73">
+          <description>Render the entire table using Text instances</description>
+          <long-description></long-description>
+          <tag name="return" line="73" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="88" package="Default">
+        <name>addHeader</name>
+        <full_name>\Webbtj\Clico\Table::addHeader()</full_name>
+        <docblock line="88">
+          <description>Add a header row. Unsets the previous header row.</description>
+          <long-description></long-description>
+          <tag name="param" line="88" description="" type="Array" variable="$row">
+            <type>Array</type>
+          </tag>
+          <tag name="return" line="88" description="" type="\Webbtj\Clico\Table">
+            <type>\Webbtj\Clico\Table</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$row</name>
+          <default></default>
+          <type>Array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="110" package="Default">
+        <name>addRow</name>
+        <full_name>\Webbtj\Clico\Table::addRow()</full_name>
+        <docblock line="110">
+          <description>Add a row</description>
+          <long-description></long-description>
+          <tag name="param" line="110" description="" type="\Webbtj\Clico\Row" variable="$row">
+            <type>\Webbtj\Clico\Row</type>
+          </tag>
+          <tag name="return" line="110" description="" type="\Webbtj\Clico\Table">
+            <type>\Webbtj\Clico\Table</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$row</name>
+          <default></default>
+          <type>\Webbtj\Clico\Row</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="124" package="Default">
+        <name>cell</name>
+        <full_name>\Webbtj\Clico\Table::cell()</full_name>
+        <docblock line="124">
+          <description>Target a specific cell for text decoration</description>
+          <long-description></long-description>
+          <tag name="param" line="124" description="" type="integer" variable="$column">
+            <type>integer</type>
+          </tag>
+          <tag name="param" line="124" description="" type="integer" variable="$row">
+            <type>integer</type>
+          </tag>
+          <tag name="return" line="124" description="" type="\Webbtj\Clico\Table">
+            <type>\Webbtj\Clico\Table</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$column</name>
+          <default></default>
+          <type>integer</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$row</name>
+          <default></default>
+          <type>integer</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="135" package="Default">
+        <name>column</name>
+        <full_name>\Webbtj\Clico\Table::column()</full_name>
+        <docblock line="135">
+          <description>Target an entire column for text decoration</description>
+          <long-description></long-description>
+          <tag name="param" line="135" description="" type="integer" variable="$index">
+            <type>integer</type>
+          </tag>
+          <tag name="return" line="135" description="" type="\Webbtj\Clico\Table">
+            <type>\Webbtj\Clico\Table</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$index</name>
+          <default>null</default>
+          <type>integer</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="147" package="Default">
+        <name>distributeColumns</name>
+        <full_name>\Webbtj\Clico\Table::distributeColumns()</full_name>
+        <docblock line="147">
+          <description>Fit all columns to the table (width and height)</description>
+          <long-description></long-description>
+          <tag name="param" line="147" description="" type="integer" variable="$maxWidth">
+            <type>integer</type>
+          </tag>
+          <tag name="return" line="147" description="" type="\Webbtj\Clico\Table">
+            <type>\Webbtj\Clico\Table</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$maxWidth</name>
+          <default>160</default>
+          <type>integer</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="161" package="Default">
+        <name>getHeaderLineCharacter</name>
+        <full_name>\Webbtj\Clico\Table::getHeaderLineCharacter()</full_name>
+        <docblock line="161">
+          <description>Get the character (decorated) used to separate the header row from the body</description>
+          <long-description></long-description>
+          <tag name="return" line="161" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="171" package="Default">
+        <name>getHeight</name>
+        <full_name>\Webbtj\Clico\Table::getHeight()</full_name>
+        <docblock line="171">
+          <description>Get the number of rows high the table is</description>
+          <long-description></long-description>
+          <tag name="return" line="171" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="181" package="Default">
+        <name>getPipeCharacter</name>
+        <full_name>\Webbtj\Clico\Table::getPipeCharacter()</full_name>
+        <docblock line="181">
+          <description>Get the character (decorated) used to separate columns</description>
+          <long-description></long-description>
+          <tag name="return" line="181" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="191" package="Default">
+        <name>getRowLineCharacter</name>
+        <full_name>\Webbtj\Clico\Table::getRowLineCharacter()</full_name>
+        <docblock line="191">
+          <description>Get the character (decorated) used to separate body rows</description>
+          <long-description></long-description>
+          <tag name="return" line="191" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="201" package="Default">
+        <name>getWidth</name>
+        <full_name>\Webbtj\Clico\Table::getWidth()</full_name>
+        <docblock line="201">
+          <description>Get the number of columns wide the table is</description>
+          <long-description></long-description>
+          <tag name="return" line="201" description="" type="integer">
+            <type>integer</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="217" package="Default">
+        <name>populate</name>
+        <full_name>\Webbtj\Clico\Table::populate()</full_name>
+        <docblock line="217">
+          <description>Reformat Rows' and Columns' widths, heights, and separation characters as necessary.</description>
+          <long-description>Optionally add rows of data to the table</long-description>
+          <tag name="param" line="217" description="" type="Array" variable="$data">
+            <type>Array</type>
+          </tag>
+          <tag name="return" line="217" description="" type="\Webbtj\Clico\Table">
+            <type>\Webbtj\Clico\Table</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$data</name>
+          <default>null</default>
+          <type>Array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="236" package="Default">
+        <name>row</name>
+        <full_name>\Webbtj\Clico\Table::row()</full_name>
+        <docblock line="236">
+          <description>Target an entire row for text decoration</description>
+          <long-description></long-description>
+          <tag name="param" line="236" description="" type="integer" variable="$index">
+            <type>integer</type>
+          </tag>
+          <tag name="return" line="236" description="" type="\Webbtj\Clico\Table">
+            <type>\Webbtj\Clico\Table</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$index</name>
+          <default>null</default>
+          <type>integer</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="247" package="Default">
+        <name>setFirstRowAsHeader</name>
+        <full_name>\Webbtj\Clico\Table::setFirstRowAsHeader()</full_name>
+        <docblock line="247">
+          <description>Make the first row the header row</description>
+          <long-description></long-description>
+          <tag name="return" line="247" description="" type="\Webbtj\Clico\Table">
+            <type>\Webbtj\Clico\Table</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="269" package="Default">
+        <name>setHeaderLineCharacter</name>
+        <full_name>\Webbtj\Clico\Table::setHeaderLineCharacter()</full_name>
+        <docblock line="269">
+          <description>Set the character used to separate the header row from the body</description>
+          <long-description></long-description>
+          <tag name="param" line="269" description="" type="String" variable="$char">
+            <type>String</type>
+          </tag>
+          <tag name="param" line="269" description="" type="boolean" variable="$pushToRows">
+            <type>boolean</type>
+          </tag>
+          <tag name="return" line="269" description="" type="\Webbtj\Clico\Table">
+            <type>\Webbtj\Clico\Table</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$char</name>
+          <default></default>
+          <type>String</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$pushToRows</name>
+          <default>true</default>
+          <type>boolean</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="286" package="Default">
+        <name>setPipeCharacter</name>
+        <full_name>\Webbtj\Clico\Table::setPipeCharacter()</full_name>
+        <docblock line="286">
+          <description>Set the (decorated) character used to separate columns</description>
+          <long-description></long-description>
+          <tag name="param" line="286" description="" type="String" variable="$char">
+            <type>String</type>
+          </tag>
+          <tag name="param" line="286" description="" type="boolean" variable="$pushToRows">
+            <type>boolean</type>
+          </tag>
+          <tag name="return" line="286" description="" type="\Webbtj\Clico\Table">
+            <type>\Webbtj\Clico\Table</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$char</name>
+          <default></default>
+          <type>String</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$pushToRows</name>
+          <default>true</default>
+          <type>boolean</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="303" package="Default">
+        <name>setRowLineCharacter</name>
+        <full_name>\Webbtj\Clico\Table::setRowLineCharacter()</full_name>
+        <docblock line="303">
+          <description>Set the charater used to separate body rows</description>
+          <long-description></long-description>
+          <tag name="param" line="303" description="" type="String" variable="$char">
+            <type>String</type>
+          </tag>
+          <tag name="param" line="303" description="" type="boolean" variable="$pushToRows">
+            <type>boolean</type>
+          </tag>
+          <tag name="return" line="303" description="" type="\Webbtj\Clico\Table">
+            <type>\Webbtj\Clico\Table</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$char</name>
+          <default></default>
+          <type>String</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$pushToRows</name>
+          <default>true</default>
+          <type>boolean</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Webbtj\Clico" line="318" package="Default">
+        <name>pushCharactersToRows</name>
+        <full_name>\Webbtj\Clico\Table::pushCharactersToRows()</full_name>
+        <docblock line="318">
+          <description>Push the separation characters down to the rows</description>
+          <long-description></long-description>
+          <tag name="return" line="318" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="15" code="PPC:ERR-50007">No summary for property $accessColumn</error>
+      <error line="16" code="PPC:ERR-50007">No summary for property $accessRow</error>
+      <error line="17" code="PPC:ERR-50007">No summary for property $headerLineCharacter</error>
+      <error line="18" code="PPC:ERR-50007">No summary for property $pipeCharacter</error>
+      <error line="19" code="PPC:ERR-50007">No summary for property $rowLineCharacter</error>
+      <error line="20" code="PPC:ERR-50007">No summary for property $rows</error>
+    </parse_markers>
+    <source>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</source>
+  </file>
+  <file path="Text.php" generated-path="Text.html" hash="a4f24338d3bff7ab5cd295745db36e96" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="Webbtj\Clico" line="11" package="Default">
+      <extends/>
+      <name>Text</name>
+      <full_name>\Webbtj\Clico\Text</full_name>
+      <docblock line="11">
+        <description>The Clico Text class allows for text decorating for the CLI stdOut.</description>
+        <long-description>Text and backgrounds can be coloured; text weight can be set as well as
+Other effects such as blinking, highlighting, and underlining.</long-description>
+        <tag name="package" line="11" description="Default"/>
+      </docblock>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="13" package="Default">
+        <name>$BACKGROUND_OPENED</name>
+        <full_name>\Webbtj\Clico\Text::BACKGROUND_OPENED</full_name>
+        <default>'background'</default>
+        <docblock line="13">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="14" package="Default">
+        <name>$BG_DARK</name>
+        <full_name>\Webbtj\Clico\Text::BG_DARK</full_name>
+        <default>40</default>
+        <docblock line="14">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="15" package="Default">
+        <name>$BG_DEFAULT</name>
+        <full_name>\Webbtj\Clico\Text::BG_DEFAULT</full_name>
+        <default>49</default>
+        <docblock line="15">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="16" package="Default">
+        <name>$BG_LIGHT</name>
+        <full_name>\Webbtj\Clico\Text::BG_LIGHT</full_name>
+        <default>100</default>
+        <docblock line="16">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="17" package="Default">
+        <name>$BLINK</name>
+        <full_name>\Webbtj\Clico\Text::BLINK</full_name>
+        <default>5</default>
+        <docblock line="17">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="18" package="Default">
+        <name>$DARK_SHADE</name>
+        <full_name>\Webbtj\Clico\Text::DARK_SHADE</full_name>
+        <default>'dark'</default>
+        <docblock line="18">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="19" package="Default">
+        <name>$FG_DARK</name>
+        <full_name>\Webbtj\Clico\Text::FG_DARK</full_name>
+        <default>30</default>
+        <docblock line="19">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="20" package="Default">
+        <name>$FG_DEFAULT</name>
+        <full_name>\Webbtj\Clico\Text::FG_DEFAULT</full_name>
+        <default>39</default>
+        <docblock line="20">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="21" package="Default">
+        <name>$FG_LIGHT</name>
+        <full_name>\Webbtj\Clico\Text::FG_LIGHT</full_name>
+        <default>90</default>
+        <docblock line="21">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="22" package="Default">
+        <name>$FOREGROUND_OPENED</name>
+        <full_name>\Webbtj\Clico\Text::FOREGROUND_OPENED</full_name>
+        <default>'foreground'</default>
+        <docblock line="22">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="23" package="Default">
+        <name>$HIDDEN</name>
+        <full_name>\Webbtj\Clico\Text::HIDDEN</full_name>
+        <default>8</default>
+        <docblock line="23">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="24" package="Default">
+        <name>$HIGHLIGHT</name>
+        <full_name>\Webbtj\Clico\Text::HIGHLIGHT</full_name>
+        <default>7</default>
+        <docblock line="24">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="25" package="Default">
+        <name>$LIGHT_SHADE</name>
+        <full_name>\Webbtj\Clico\Text::LIGHT_SHADE</full_name>
+        <default>'light'</default>
+        <docblock line="25">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="26" package="Default">
+        <name>$UNDERLINE</name>
+        <full_name>\Webbtj\Clico\Text::UNDERLINE</full_name>
+        <default>4</default>
+        <docblock line="26">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="27" package="Default">
+        <name>$WEIGHT_HEAVY</name>
+        <full_name>\Webbtj\Clico\Text::WEIGHT_HEAVY</full_name>
+        <default>1</default>
+        <docblock line="27">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="28" package="Default">
+        <name>$WEIGHT_LIGHT</name>
+        <full_name>\Webbtj\Clico\Text::WEIGHT_LIGHT</full_name>
+        <default>2</default>
+        <docblock line="28">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="true" visibility="public" namespace="Webbtj\Clico" line="29" package="Default">
+        <name>$WEIGHT_NORMAL</name>
+        <full_name>\Webbtj\Clico\Text::WEIGHT_NORMAL</full_name>
+        <default>0</default>
+        <docblock line="29">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="31" package="Default">
+        <name>$background</name>
+        <full_name>\Webbtj\Clico\Text::background</full_name>
+        <default></default>
+        <docblock line="31">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="32" package="Default">
+        <name>$blink</name>
+        <full_name>\Webbtj\Clico\Text::blink</full_name>
+        <default></default>
+        <docblock line="32">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="33" package="Default">
+        <name>$foreground</name>
+        <full_name>\Webbtj\Clico\Text::foreground</full_name>
+        <default></default>
+        <docblock line="33">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="34" package="Default">
+        <name>$hidden</name>
+        <full_name>\Webbtj\Clico\Text::hidden</full_name>
+        <default></default>
+        <docblock line="34">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="35" package="Default">
+        <name>$highlight</name>
+        <full_name>\Webbtj\Clico\Text::highlight</full_name>
+        <default></default>
+        <docblock line="35">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="36" package="Default">
+        <name>$opened</name>
+        <full_name>\Webbtj\Clico\Text::opened</full_name>
+        <default></default>
+        <docblock line="36">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="37" package="Default">
+        <name>$repeat</name>
+        <full_name>\Webbtj\Clico\Text::repeat</full_name>
+        <default>1</default>
+        <docblock line="37">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="38" package="Default">
+        <name>$shade</name>
+        <full_name>\Webbtj\Clico\Text::shade</full_name>
+        <default></default>
+        <docblock line="38">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="39" package="Default">
+        <name>$string</name>
+        <full_name>\Webbtj\Clico\Text::string</full_name>
+        <default></default>
+        <docblock line="39">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="40" package="Default">
+        <name>$underline</name>
+        <full_name>\Webbtj\Clico\Text::underline</full_name>
+        <default></default>
+        <docblock line="40">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="41" package="Default">
+        <name>$weight</name>
+        <full_name>\Webbtj\Clico\Text::weight</full_name>
+        <default></default>
+        <docblock line="41">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="50" package="Default">
+        <name>__construct</name>
+        <full_name>\Webbtj\Clico\Text::__construct()</full_name>
+        <docblock line="50">
+          <description>Constructor.</description>
+          <long-description>Can optionally set the text on instantiation.</long-description>
+          <tag name="param" line="50" description="" type="String" variable="$string">
+            <type>String</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$string</name>
+          <default>null</default>
+          <type>String</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="65" package="Default">
+        <name>__toString</name>
+        <full_name>\Webbtj\Clico\Text::__toString()</full_name>
+        <docblock line="65">
+          <description>Renders decorated text.</description>
+          <long-description></long-description>
+          <tag name="return" line="65" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="103" package="Default">
+        <name>b</name>
+        <full_name>\Webbtj\Clico\Text::b()</full_name>
+        <docblock line="103">
+          <description>Alias of `heavyWeight()`</description>
+          <long-description></long-description>
+          <tag name="return" line="103" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="113" package="Default">
+        <name>background</name>
+        <full_name>\Webbtj\Clico\Text::background()</full_name>
+        <docblock line="113">
+          <description>Direct future colour methods to affect the background colour.</description>
+          <long-description></long-description>
+          <tag name="return" line="113" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="124" package="Default">
+        <name>black</name>
+        <full_name>\Webbtj\Clico\Text::black()</full_name>
+        <docblock line="124">
+          <description>Set the colour (background or foreground) to black</description>
+          <long-description></long-description>
+          <tag name="return" line="124" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="134" package="Default">
+        <name>blink</name>
+        <full_name>\Webbtj\Clico\Text::blink()</full_name>
+        <docblock line="134">
+          <description>Make the text blink/flash</description>
+          <long-description></long-description>
+          <tag name="return" line="134" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="144" package="Default">
+        <name>blue</name>
+        <full_name>\Webbtj\Clico\Text::blue()</full_name>
+        <docblock line="144">
+          <description>Set the colour (background or foreground) to blue</description>
+          <long-description></long-description>
+          <tag name="return" line="144" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="154" package="Default">
+        <name>bold</name>
+        <full_name>\Webbtj\Clico\Text::bold()</full_name>
+        <docblock line="154">
+          <description>Alias of `heavyWeight()`</description>
+          <long-description></long-description>
+          <tag name="return" line="154" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="164" package="Default">
+        <name>cyan</name>
+        <full_name>\Webbtj\Clico\Text::cyan()</full_name>
+        <docblock line="164">
+          <description>Set the colour (background or foreground) to cyan</description>
+          <long-description></long-description>
+          <tag name="return" line="164" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="174" package="Default">
+        <name>dark</name>
+        <full_name>\Webbtj\Clico\Text::dark()</full_name>
+        <docblock line="174">
+          <description>Make future colour assignments their dark variant</description>
+          <long-description></long-description>
+          <tag name="return" line="174" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="185" package="Default">
+        <name>darken</name>
+        <full_name>\Webbtj\Clico\Text::darken()</full_name>
+        <docblock line="185">
+          <description>Make the most recent colour assignment (background/foreground) its dark variant.</description>
+          <long-description></long-description>
+          <tag name="return" line="185" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="208" package="Default">
+        <name>setDefault</name>
+        <full_name>\Webbtj\Clico\Text::setDefault()</full_name>
+        <docblock line="208">
+          <description>Set the active colour property to its default. Pass $setAll = true to
+set both the background and foreground colours to their default.</description>
+          <long-description></long-description>
+          <tag name="param" line="208" description="" type="boolean" variable="$setAll">
+            <type>boolean</type>
+          </tag>
+          <tag name="return" line="208" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$setAll</name>
+          <default>false</default>
+          <type>boolean</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="223" package="Default">
+        <name>dim</name>
+        <full_name>\Webbtj\Clico\Text::dim()</full_name>
+        <docblock line="223">
+          <description>Alias of `lightWeight()`</description>
+          <long-description></long-description>
+          <tag name="return" line="223" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="233" package="Default">
+        <name>flash</name>
+        <full_name>\Webbtj\Clico\Text::flash()</full_name>
+        <docblock line="233">
+          <description>Alias of `blink()`</description>
+          <long-description></long-description>
+          <tag name="return" line="233" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="243" package="Default">
+        <name>foreground</name>
+        <full_name>\Webbtj\Clico\Text::foreground()</full_name>
+        <docblock line="243">
+          <description>Direct future colour methods to affect the foreground colour.</description>
+          <long-description></long-description>
+          <tag name="return" line="243" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="254" package="Default">
+        <name>getText</name>
+        <full_name>\Webbtj\Clico\Text::getText()</full_name>
+        <docblock line="254">
+          <description>Get the undecorated text value</description>
+          <long-description></long-description>
+          <tag name="return" line="254" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="264" package="Default">
+        <name>green</name>
+        <full_name>\Webbtj\Clico\Text::green()</full_name>
+        <docblock line="264">
+          <description>Set the colour (background or foreground) to green</description>
+          <long-description></long-description>
+          <tag name="return" line="264" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="274" package="Default">
+        <name>heavyWeight</name>
+        <full_name>\Webbtj\Clico\Text::heavyWeight()</full_name>
+        <docblock line="274">
+          <description>Make the text bold</description>
+          <long-description></long-description>
+          <tag name="return" line="274" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="285" package="Default">
+        <name>hidden</name>
+        <full_name>\Webbtj\Clico\Text::hidden()</full_name>
+        <docblock line="285">
+          <description>Make the text invisible</description>
+          <long-description></long-description>
+          <tag name="return" line="285" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="296" package="Default">
+        <name>hide</name>
+        <full_name>\Webbtj\Clico\Text::hide()</full_name>
+        <docblock line="296">
+          <description>Alias of `hidden()`</description>
+          <long-description></long-description>
+          <tag name="return" line="296" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="306" package="Default">
+        <name>highlight</name>
+        <full_name>\Webbtj\Clico\Text::highlight()</full_name>
+        <docblock line="306">
+          <description>Make the text highlighted (invert background and foregroune colours)</description>
+          <long-description></long-description>
+          <tag name="return" line="306" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="317" package="Default">
+        <name>length</name>
+        <full_name>\Webbtj\Clico\Text::length()</full_name>
+        <docblock line="317">
+          <description>Get the length of the undecorated string</description>
+          <long-description></long-description>
+          <tag name="return" line="317" description="" type="integer">
+            <type>integer</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="327" package="Default">
+        <name>light</name>
+        <full_name>\Webbtj\Clico\Text::light()</full_name>
+        <docblock line="327">
+          <description>Make future colour assignments their light variant</description>
+          <long-description></long-description>
+          <tag name="return" line="327" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="338" package="Default">
+        <name>lighten</name>
+        <full_name>\Webbtj\Clico\Text::lighten()</full_name>
+        <docblock line="338">
+          <description>Make the most recent colour assignment (background/foreground) its light variant.</description>
+          <long-description></long-description>
+          <tag name="return" line="338" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="359" package="Default">
+        <name>lightWeight</name>
+        <full_name>\Webbtj\Clico\Text::lightWeight()</full_name>
+        <docblock line="359">
+          <description>Make the text light weight/thin/dim</description>
+          <long-description></long-description>
+          <tag name="return" line="359" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="370" package="Default">
+        <name>magenta</name>
+        <full_name>\Webbtj\Clico\Text::magenta()</full_name>
+        <docblock line="370">
+          <description>Set the colour (background or foreground) to magenta</description>
+          <long-description></long-description>
+          <tag name="return" line="370" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="380" package="Default">
+        <name>normal</name>
+        <full_name>\Webbtj\Clico\Text::normal()</full_name>
+        <docblock line="380">
+          <description>Alias of `normalWeight()`</description>
+          <long-description></long-description>
+          <tag name="return" line="380" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="390" package="Default">
+        <name>normalWeight</name>
+        <full_name>\Webbtj\Clico\Text::normalWeight()</full_name>
+        <docblock line="390">
+          <description>Make the text normal/default weight</description>
+          <long-description></long-description>
+          <tag name="return" line="390" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="401" package="Default">
+        <name>rainbow</name>
+        <full_name>\Webbtj\Clico\Text::rainbow()</full_name>
+        <docblock line="401">
+          <description>Experimental: Make the text multi-coloured</description>
+          <long-description></long-description>
+          <tag name="return" line="401" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="422" package="Default">
+        <name>red</name>
+        <full_name>\Webbtj\Clico\Text::red()</full_name>
+        <docblock line="422">
+          <description>Set the colour (background or foreground) to red</description>
+          <long-description></long-description>
+          <tag name="return" line="422" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="433" package="Default">
+        <name>repeat</name>
+        <full_name>\Webbtj\Clico\Text::repeat()</full_name>
+        <docblock line="433">
+          <description>Repeat the text property when rendering</description>
+          <long-description></long-description>
+          <tag name="param" line="433" description="" type="integer" variable="$repeat">
+            <type>integer</type>
+          </tag>
+          <tag name="return" line="433" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$repeat</name>
+          <default></default>
+          <type>integer</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="444" package="Default">
+        <name>strong</name>
+        <full_name>\Webbtj\Clico\Text::strong()</full_name>
+        <docblock line="444">
+          <description>Alias of `heavyWeight()`</description>
+          <long-description></long-description>
+          <tag name="return" line="444" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="455" package="Default">
+        <name>testPattern</name>
+        <full_name>\Webbtj\Clico\Text::testPattern()</full_name>
+        <docblock line="455">
+          <description>Experimental: Output a test pattern</description>
+          <long-description></long-description>
+          <tag name="param" line="455" description="" type="integer" variable="$width">
+            <type>integer</type>
+          </tag>
+          <tag name="return" line="455" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$width</name>
+          <default>10</default>
+          <type>integer</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="474" package="Default">
+        <name>text</name>
+        <full_name>\Webbtj\Clico\Text::text()</full_name>
+        <docblock line="474">
+          <description>Set the (undecorated) string property</description>
+          <long-description></long-description>
+          <tag name="param" line="474" description="" type="String" variable="$string">
+            <type>String</type>
+          </tag>
+          <tag name="return" line="474" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$string</name>
+          <default></default>
+          <type>String</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="485" package="Default">
+        <name>thin</name>
+        <full_name>\Webbtj\Clico\Text::thin()</full_name>
+        <docblock line="485">
+          <description>Alias of `lightWeight()`</description>
+          <long-description></long-description>
+          <tag name="return" line="485" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="495" package="Default">
+        <name>u</name>
+        <full_name>\Webbtj\Clico\Text::u()</full_name>
+        <docblock line="495">
+          <description>Alias of `underline()`</description>
+          <long-description></long-description>
+          <tag name="return" line="495" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="505" package="Default">
+        <name>underline</name>
+        <full_name>\Webbtj\Clico\Text::underline()</full_name>
+        <docblock line="505">
+          <description>Make the text underlined</description>
+          <long-description></long-description>
+          <tag name="return" line="505" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="516" package="Default">
+        <name>white</name>
+        <full_name>\Webbtj\Clico\Text::white()</full_name>
+        <docblock line="516">
+          <description>Set the colour (background or foreground) to white/grey</description>
+          <long-description></long-description>
+          <tag name="return" line="516" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="526" package="Default">
+        <name>yellow</name>
+        <full_name>\Webbtj\Clico\Text::yellow()</full_name>
+        <docblock line="526">
+          <description>Set the colour (background or foreground) to yellow</description>
+          <long-description></long-description>
+          <tag name="return" line="526" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Webbtj\Clico" line="537" package="Default">
+        <name>assignColour</name>
+        <full_name>\Webbtj\Clico\Text::assignColour()</full_name>
+        <docblock line="537">
+          <description>Set the colour property</description>
+          <long-description></long-description>
+          <tag name="param" line="537" description="" type="integer" variable="$colour">
+            <type>integer</type>
+          </tag>
+          <tag name="return" line="537" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$colour</name>
+          <default></default>
+          <type>integer</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Webbtj\Clico" line="562" package="Default">
+        <name>colourMap</name>
+        <full_name>\Webbtj\Clico\Text::colourMap()</full_name>
+        <docblock line="562">
+          <description>The index of available colours and their numeric values</description>
+          <long-description></long-description>
+          <tag name="return" line="562" description="" type="Array">
+            <type>Array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="13" code="PPC:ERR-50007">No summary for property $BACKGROUND_OPENED</error>
+      <error line="14" code="PPC:ERR-50007">No summary for property $BG_DARK</error>
+      <error line="15" code="PPC:ERR-50007">No summary for property $BG_DEFAULT</error>
+      <error line="16" code="PPC:ERR-50007">No summary for property $BG_LIGHT</error>
+      <error line="17" code="PPC:ERR-50007">No summary for property $BLINK</error>
+      <error line="18" code="PPC:ERR-50007">No summary for property $DARK_SHADE</error>
+      <error line="19" code="PPC:ERR-50007">No summary for property $FG_DARK</error>
+      <error line="20" code="PPC:ERR-50007">No summary for property $FG_DEFAULT</error>
+      <error line="21" code="PPC:ERR-50007">No summary for property $FG_LIGHT</error>
+      <error line="22" code="PPC:ERR-50007">No summary for property $FOREGROUND_OPENED</error>
+      <error line="23" code="PPC:ERR-50007">No summary for property $HIDDEN</error>
+      <error line="24" code="PPC:ERR-50007">No summary for property $HIGHLIGHT</error>
+      <error line="25" code="PPC:ERR-50007">No summary for property $LIGHT_SHADE</error>
+      <error line="26" code="PPC:ERR-50007">No summary for property $UNDERLINE</error>
+      <error line="27" code="PPC:ERR-50007">No summary for property $WEIGHT_HEAVY</error>
+      <error line="28" code="PPC:ERR-50007">No summary for property $WEIGHT_LIGHT</error>
+      <error line="29" code="PPC:ERR-50007">No summary for property $WEIGHT_NORMAL</error>
+      <error line="31" code="PPC:ERR-50007">No summary for property $background</error>
+      <error line="32" code="PPC:ERR-50007">No summary for property $blink</error>
+      <error line="33" code="PPC:ERR-50007">No summary for property $foreground</error>
+      <error line="34" code="PPC:ERR-50007">No summary for property $hidden</error>
+      <error line="35" code="PPC:ERR-50007">No summary for property $highlight</error>
+      <error line="36" code="PPC:ERR-50007">No summary for property $opened</error>
+      <error line="37" code="PPC:ERR-50007">No summary for property $repeat</error>
+      <error line="38" code="PPC:ERR-50007">No summary for property $shade</error>
+      <error line="39" code="PPC:ERR-50007">No summary for property $string</error>
+      <error line="40" code="PPC:ERR-50007">No summary for property $underline</error>
+      <error line="41" code="PPC:ERR-50007">No summary for property $weight</error>
+    </parse_markers>
+    <source>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</source>
+  </file>
+  <file path="Column.php" generated-path="Column.html" hash="fdb0c65c6060b5f9630cfd6ee046d847" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Text">\Webbtj\Clico\Text</namespace-alias>
+    <class final="false" abstract="false" namespace="Webbtj\Clico" line="12" package="Default">
+      <extends/>
+      <name>Column</name>
+      <full_name>\Webbtj\Clico\Column</full_name>
+      <docblock line="12">
+        <description>The Clico Column class is utilized by the Table and Row classes.</description>
+        <long-description>It souldn't need to be accessed directly. It it used to fill Rows.</long-description>
+        <tag name="package" line="12" description="Default"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="14" package="Default">
+        <name>$height</name>
+        <full_name>\Webbtj\Clico\Column::height</full_name>
+        <default>1</default>
+        <docblock line="14">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="15" package="Default">
+        <name>$lines</name>
+        <full_name>\Webbtj\Clico\Column::lines</full_name>
+        <default>array()</default>
+        <docblock line="15">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="16" package="Default">
+        <name>$text</name>
+        <full_name>\Webbtj\Clico\Column::text</full_name>
+        <default>null</default>
+        <docblock line="16">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="17" package="Default">
+        <name>$textWriter</name>
+        <full_name>\Webbtj\Clico\Column::textWriter</full_name>
+        <default></default>
+        <docblock line="17">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Webbtj\Clico" line="18" package="Default">
+        <name>$width</name>
+        <full_name>\Webbtj\Clico\Column::width</full_name>
+        <default>0</default>
+        <docblock line="18">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="25" package="Default">
+        <name>__construct</name>
+        <full_name>\Webbtj\Clico\Column::__construct()</full_name>
+        <docblock line="25">
+          <description>Constructor. Sets the `$text` property on instantiation.</description>
+          <long-description></long-description>
+          <tag name="param" line="25" description="" type="String" variable="$text">
+            <type>String</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$text</name>
+          <default></default>
+          <type>String</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="36" package="Default">
+        <name>getHeight</name>
+        <full_name>\Webbtj\Clico\Column::getHeight()</full_name>
+        <docblock line="36">
+          <description>Gets the height of the column (number of lines)</description>
+          <long-description></long-description>
+          <tag name="return" line="36" description="" type="integer">
+            <type>integer</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="47" package="Default">
+        <name>getLine</name>
+        <full_name>\Webbtj\Clico\Column::getLine()</full_name>
+        <docblock line="47">
+          <description>Gets a single line</description>
+          <long-description></long-description>
+          <tag name="param" line="47" description="" type="integer" variable="$i">
+            <type>integer</type>
+          </tag>
+          <tag name="return" line="47" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$i</name>
+          <default></default>
+          <type>integer</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="60" package="Default">
+        <name>getLines</name>
+        <full_name>\Webbtj\Clico\Column::getLines()</full_name>
+        <docblock line="60">
+          <description>Returns all of the lines of text, undecorated</description>
+          <long-description></long-description>
+          <tag name="return" line="60" description="" type="Array">
+            <type>Array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="70" package="Default">
+        <name>getText</name>
+        <full_name>\Webbtj\Clico\Column::getText()</full_name>
+        <docblock line="70">
+          <description>Gets the undecorated text</description>
+          <long-description></long-description>
+          <tag name="return" line="70" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="80" package="Default">
+        <name>getTextWriter</name>
+        <full_name>\Webbtj\Clico\Column::getTextWriter()</full_name>
+        <docblock line="80">
+          <description>Gets the Text class instance</description>
+          <long-description></long-description>
+          <tag name="return" line="80" description="" type="\Webbtj\Clico\Text">
+            <type>\Webbtj\Clico\Text</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="90" package="Default">
+        <name>getWidth</name>
+        <full_name>\Webbtj\Clico\Column::getWidth()</full_name>
+        <docblock line="90">
+          <description>Gets the width of the column in characters</description>
+          <long-description></long-description>
+          <tag name="return" line="90" description="" type="integer">
+            <type>integer</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="101" package="Default">
+        <name>setText</name>
+        <full_name>\Webbtj\Clico\Column::setText()</full_name>
+        <docblock line="101">
+          <description>Sets the `$text` property</description>
+          <long-description></long-description>
+          <tag name="param" line="101" description="" type="String" variable="$text">
+            <type>String</type>
+          </tag>
+          <tag name="return" line="101" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$text</name>
+          <default></default>
+          <type>String</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="113" package="Default">
+        <name>setWidth</name>
+        <full_name>\Webbtj\Clico\Column::setWidth()</full_name>
+        <docblock line="113">
+          <description>Set the column width in characters</description>
+          <long-description></long-description>
+          <tag name="param" line="113" description="" type="integer" variable="$width">
+            <type>integer</type>
+          </tag>
+          <tag name="return" line="113" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$width</name>
+          <default></default>
+          <type>integer</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Webbtj\Clico" line="125" package="Default">
+        <name>verticalPad</name>
+        <full_name>\Webbtj\Clico\Column::verticalPad()</full_name>
+        <docblock line="125">
+          <description>Add additional blank lines to the end of the column</description>
+          <long-description></long-description>
+          <tag name="param" line="125" description="" type="integer" variable="$height">
+            <type>integer</type>
+          </tag>
+          <tag name="return" line="125" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$height</name>
+          <default></default>
+          <type>integer</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Webbtj\Clico" line="138" package="Default">
+        <name>populateLines</name>
+        <full_name>\Webbtj\Clico\Column::populateLines()</full_name>
+        <docblock line="138">
+          <description>Split the `$text` property into substrings to fit within the set width</description>
+          <long-description></long-description>
+          <tag name="return" line="138" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="14" code="PPC:ERR-50007">No summary for property $height</error>
+      <error line="15" code="PPC:ERR-50007">No summary for property $lines</error>
+      <error line="16" code="PPC:ERR-50007">No summary for property $text</error>
+      <error line="17" code="PPC:ERR-50007">No summary for property $textWriter</error>
+      <error line="18" code="PPC:ERR-50007">No summary for property $width</error>
+    </parse_markers>
+    <source>eJylVk1v2zgQvetXDAoDkVLHbvaapN2ih22BHorGQA5NkFISbXGXpgSSSpoW/u8dkpJN0/qwuwICxOR8vHlvOOT1u6qookiQNVUVySjc0TTV/95/4Cwrr6KoVvtL9wv6Q+P6/Pw8gnNYFBTsOnwoeb0WkHGiFDAFtWac/aQ5pC+g0WpBUk6BiBy+ls/OjKqZiWH+PmlQZc1zcaZBUPTSJaRonmUU7XLImaSZ5i8zY8k01MrZLBnnJqCNNI9cdgcl+hUBfpVkT0RTmBSUrQoNN3B5tb/BmaAK1789BBsaS8V1UXPesXMnmaYy2HhmuS7Q5w1SZDYsTeY7R1RCaVlnupQzuKVaWVq+21jfMUJZUalfoBTA0JAIzYhmpZg1/m2YvysiyRputWRi5ZA0W3MHpU5RD1jWIjPu8PiYtYlj3ymx1o4j8010wdTF211lpnL6DEbvOLkK7RTVdsfFctubg5r/actsyC+X9lfmeiUW9TrFRLhqNUjCUiXVtTR8aLqicrDMFdUfbY44LKwJ0uB2QAbxElDIEjarAdXNfoMIJizEuhjTA4F+xrgxhkD3ECxbxgwb3vBq4Vpevk3YQ5LsjKwMZgclOpDN/R+j4o8VyQ/iTFsP26kXl4knrc+WcdjtbHr4+mqtkTI8hY227jSZHwhjCrXIaVZKPBx5j7rvpSQvx1CmRqS1mUc70QME3uEJUSl7VMZgucMxiErbeTkCysRpR6c9/NlB453QX4ttMxyBzR9jAwjdYNs/vwzHfYHnIcMA6v+d3TsTfgSthdAHtHegHj0+t5CfSpYP4m1n35Hj1J7SbRd4m1VZ1RwbsWnugdJ81p0Sg9wHQ8p6/EmVThU7qWyMniLbS2/iKXR6me/zHEieM5OccEg5Ef810wQvekMAxcfDXgeO1O1m/cmFP2HbsIzwLzg+be0uTlj8c8E4jbOyFvvTOoHrrUsws/1Z/ICEnZ2FI9Yz275XJsN31m3Fme5+SyD6ElSdumGm3INJYwdhBmFdUGTw22OcrOals2UrULe7Q8InlvnwqvP7p+t+My6VpKtHZWqMX83jdzf3d6+T+aupf8CCK2yS1VJSYe+MgGTzLUtJSVbETQaiXK4gf4MQmeNUONsE3u53/AX81eHV1uah6LHq7Anf76rfbbjG9tt0rs7nlk+oKzDZgZc4xfwLL0y2lGS1xmxGD/OwcHJYUqaHlHRD2dK+C2aob3+dRFHrdGzRG8oV7VWq1dgXDF7DvvTXN8dqbyH78sxuwufUkdi6i/+T/hjKf8hW1P9rvLFPALwL3T/81uRHfDmFjjG7vUg2vwEXJACs</source>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="global" full_name="global"/>
+  <namespace name="Webbtj" full_name="Webbtj">
+    <namespace name="Clico" full_name="Webbtj\Clico"/>
+  </namespace>
+  <deprecated count="0"/>
+</project>

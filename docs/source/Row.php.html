@@ -1,0 +1,293 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+
+namespace Webbtj\Clico;
+
+use Webbtj\Clico\Column;
+use Webbtj\Clico\Text;
+
+/**
+ * The Clico Row class is utilized by the Table class.
+ * 
+ * It souldn't need to be accessed directly. It it used to fill Tables.
+ */
+class Row
+{
+    private $columns = [];
+    private $distributedWidth = 0;
+    private $headerLineCharacter;
+    private $height;
+    private $isHeader = false;
+    private $pipeCharacter;
+    private $rowLineCharacter;
+
+    /**
+     * Constructor. Can optionally set the values of the columns
+     *
+     * @param Array $data
+     */
+    public function __construct(Array $data = null)
+    {
+        if($data){
+            $this-&gt;populate($data);
+        }
+
+        $this-&gt;unsetHeader();
+    }
+
+    /**
+     * Renders the columns, decorated.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        $output = &quot;&quot;;
+        $dashLine = '';
+        for($i = 0; $i &lt; $this-&gt;height; $i++){
+            foreach($this-&gt;columns as $column){
+                $output .= $column-&gt;getLine($i) . $this-&gt;pipeCharacter;
+
+                if($i == 0){
+                    $dashLine .= $this-&gt;getLineCharacter()-&gt;repeat($column-&gt;getWidth() - 1) . $this-&gt;getPipeCharacter();
+                }
+            }
+            $output .= &quot;\n&quot;;
+        }
+        if($dashLine){
+            $output .= $dashLine . &quot;\n&quot;;
+        }
+        return $output;
+    }
+
+    /**
+     * Adds a column to the Row
+     *
+     * @param Column $column
+     * @return void
+     */
+    public function addColumn(Column $column)
+    {
+        $this-&gt;columns[] = $column;
+    }
+
+    /**
+     * Sets the widths of each column to fit within `$maxWidth`
+     *
+     * @param integer $maxWidth
+     * @param integer $numCols
+     * @return void
+     */
+    public function distributeColumns(int $maxWidth, int $numCols)
+    {
+        $this-&gt;distributedWidth = 0;
+        $avg = $maxWidth / $numCols;
+        foreach($this-&gt;columns as $k =&gt; &amp;$column){
+            $width = floor($avg);
+            //while already distributed width plus this width is less than (k+1) * avg
+            while( ($this-&gt;distributedWidth + $width) &lt; (($k+1) * $avg) ){
+                $width++;
+            }
+            $this-&gt;distributedWidth += $width;
+            $column-&gt;setWidth($width);
+        }
+    }
+
+    /**
+     * Get the columns
+     *
+     * @return Array
+     */
+    public function getColumns()
+    {
+        return $this-&gt;columns;
+    }
+
+    /**
+     * Get the character (decorated) used to separate the header row from the body
+     *
+     * @return Text
+     */
+    public function getHeaderLineCharacter()
+    {
+        return $this-&gt;headerLineCharacter;
+    }
+
+    /**
+     * Get the character (decorated) used to separate this row from other.
+     * This will return either the `headerLineCharacter` or the `rowLineCharacter`
+     *
+     * @return Text
+     */
+    public function getLineCharacter()
+    {
+        return $this-&gt;isHeader ? $this-&gt;getHeaderLineCharacter() : $this-&gt;getRowLineCharacter();
+    }
+
+    /**
+     * Get the character (decorated) used to separate columns
+     *
+     * @return Text
+     */
+    public function getPipeCharacter()
+    {
+        return $this-&gt;pipeCharacter;
+    }
+
+    /**
+     * Get the character (decorated) used to separate body rows
+     *
+     * @return Text
+     */
+    public function getRowLineCharacter()
+    {
+        return $this-&gt;rowLineCharacter;
+    }
+
+    /**
+     * Get the number of columns wide
+     *
+     * @return integer
+     */
+    public function getWidth()
+    {
+        return count($this-&gt;columns);
+    }
+
+    /**
+     * Check if this Row is the header row
+     *
+     * @return boolean
+     */
+    public function isHeader()
+    {
+        return $this-&gt;isHeader;
+    }
+
+    /**
+     * Put data into Columns
+     *
+     * @param Array $data
+     * @return void
+     */
+    public function populate(Array $data)
+    {
+        foreach($data as $column){
+            $this-&gt;addColumn(new Column($column));
+        }
+    }
+
+    /**
+     * Set this Row as the Table header
+     *
+     * @return void
+     */
+    public function setHeader()
+    {
+        $this-&gt;isHeader = true;
+    }
+
+    /**
+     * Set the (decorated) character used to separate the header row from the body
+     *
+     * @param Text $line
+     * @return void
+     */
+    public function setHeaderLineCharacter(Text $line)
+    {
+        $this-&gt;headerLineCharacter = $line;
+    }
+
+    /**
+     * Set the (decorated) character used to separate columns
+     *
+     * @param Text $pipe
+     * @return void
+     */
+    public function setPipeCharacter(Text $pipe)
+    {
+        $this-&gt;pipeCharacter = $pipe;
+    }
+
+    /**
+     * Set the (decorated) charater used to separate body rows
+     *
+     * @param Text $line
+     * @return void
+     */
+    public function setRowLineCharacter(Text $line)
+    {
+        $this-&gt;rowLineCharacter = $line;
+    }
+
+    /**
+     * Make the row not the header
+     *
+     * @return void
+     */
+    public function unsetHeader()
+    {
+        $this-&gt;isHeader = false;
+    }
+
+    /**
+     * Make all columns in the row the same height (stretch shorter columns)
+     *
+     * @return void
+     */
+    public function verticalConform()
+    {
+        $height = 1;
+        foreach($this-&gt;columns as $column){
+            $height = max($height, $column-&gt;getHeight());
+        }
+        foreach($this-&gt;columns as &amp;$column){
+            $column-&gt;verticalPad($height);
+        }
+        $this-&gt;height = $height;
+    }
+
+}</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Clico » \Webbtj\Clico\Row</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Clico</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Webbtj.html"><i class="icon-th"></i> Webbtj</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">50</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct() :: Constructor. Can optionally set the values of the columns"><span class="description">Constructor. Can optionally set the values of the columns</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___toString" title="__toString() :: Renders the columns, decorated."><span class="description">Renders the columns, decorated.</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_addColumn" title="addColumn() :: Adds a column to the Row"><span class="description">Adds a column to the Row</span><pre>addColumn()</pre></a></li>
+<li class="method public "><a href="#method_distributeColumns" title="distributeColumns() :: Sets the widths of each column to fit within `$maxWidth`"><span class="description">Sets the widths of each column to fit within `$maxWidth`</span><pre>distributeColumns()</pre></a></li>
+<li class="method public "><a href="#method_getColumns" title="getColumns() :: Get the columns"><span class="description">Get the columns</span><pre>getColumns()</pre></a></li>
+<li class="method public "><a href="#method_getHeaderLineCharacter" title="getHeaderLineCharacter() :: Get the character (decorated) used to separate the header row from the body"><span class="description">Get the character (decorated) used to separate the header row from the body</span><pre>getHeaderLineCharacter()</pre></a></li>
+<li class="method public "><a href="#method_getLineCharacter" title="getLineCharacter() :: Get the character (decorated) used to separate this row from other."><span class="description">Get the character (decorated) used to separate this row from other.</span><pre>getLineCharacter()</pre></a></li>
+<li class="method public "><a href="#method_getPipeCharacter" title="getPipeCharacter() :: Get the character (decorated) used to separate columns"><span class="description">Get the character (decorated) used to separate columns</span><pre>getPipeCharacter()</pre></a></li>
+<li class="method public "><a href="#method_getRowLineCharacter" title="getRowLineCharacter() :: Get the character (decorated) used to separate body rows"><span class="description">Get the character (decorated) used to separate body rows</span><pre>getRowLineCharacter()</pre></a></li>
+<li class="method public "><a href="#method_getWidth" title="getWidth() :: Get the number of columns wide"><span class="description">Get the number of columns wide</span><pre>getWidth()</pre></a></li>
+<li class="method public "><a href="#method_isHeader" title="isHeader() :: Check if this Row is the header row"><span class="description">Check if this Row is the header row</span><pre>isHeader()</pre></a></li>
+<li class="method public "><a href="#method_populate" title="populate() :: Put data into Columns"><span class="description">Put data into Columns</span><pre>populate()</pre></a></li>
+<li class="method public "><a href="#method_setHeader" title="setHeader() :: Set this Row as the Table header"><span class="description">Set this Row as the Table header</span><pre>setHeader()</pre></a></li>
+<li class="method public "><a href="#method_setHeaderLineCharacter" title="setHeaderLineCharacter() :: Set the (decorated) character used to separate the header row from the body"><span class="description">Set the (decorated) character used to separate the header row from the body</span><pre>setHeaderLineCharacter()</pre></a></li>
+<li class="method public "><a href="#method_setPipeCharacter" title="setPipeCharacter() :: Set the (decorated) character used to separate columns"><span class="description">Set the (decorated) character used to separate columns</span><pre>setPipeCharacter()</pre></a></li>
+<li class="method public "><a href="#method_setRowLineCharacter" title="setRowLineCharacter() :: Set the (decorated) charater used to separate body rows"><span class="description">Set the (decorated) charater used to separate body rows</span><pre>setRowLineCharacter()</pre></a></li>
+<li class="method public "><a href="#method_unsetHeader" title="unsetHeader() :: Make the row not the header"><span class="description">Make the row not the header</span><pre>unsetHeader()</pre></a></li>
+<li class="method public "><a href="#method_verticalConform" title="verticalConform() :: Make all columns in the row the same height (stretch shorter columns)"><span class="description">Make all columns in the row the same height (stretch shorter columns)</span><pre>verticalConform()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_columns" title="$columns() :: "><span class="description"></span><pre>$columns</pre></a></li>
+<li class="property private "><a href="#property_distributedWidth" title="$distributedWidth() :: "><span class="description"></span><pre>$distributedWidth</pre></a></li>
+<li class="property private "><a href="#property_headerLineCharacter" title="$headerLineCharacter() :: "><span class="description"></span><pre>$headerLineCharacter</pre></a></li>
+<li class="property private "><a href="#property_height" title="$height() :: "><span class="description"></span><pre>$height</pre></a></li>
+<li class="property private "><a href="#property_isHeader" title="$isHeader() :: "><span class="description"></span><pre>$isHeader</pre></a></li>
+<li class="property private "><a href="#property_pipeCharacter" title="$pipeCharacter() :: "><span class="description"></span><pre>$pipeCharacter</pre></a></li>
+<li class="property private "><a href="#property_rowLineCharacter" title="$rowLineCharacter() :: "><span class="description"></span><pre>$rowLineCharacter</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\Webbtj\Clico\Row"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Webbtj.html">Webbtj</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Webbtj.Clico.html">Clico</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Webbtj.Clico.Row.html">Row</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">The Clico Row class is utilized by the Table class.</p>
+<div class="details">
+<div class="long_description"><p>It souldn't need to be accessed directly. It it used to fill Tables.</p></div>
+<table class="table table-bordered"><tr>
+<th>package</th>
+<td><a href="../packages/Default.html">Default</a></td>
+</tr></table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>Constructor. Can optionally set the values of the columns</h2>
+<pre>__construct(Array $data<code> = null</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>Array</code>
+</div>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString " data-toggle="collapse" data-target=".method___toString .collapse" title="public">
+<h2>Renders the columns, decorated.</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_addColumn"></a><div class="element clickable method public method_addColumn " data-toggle="collapse" data-target=".method_addColumn .collapse" title="public">
+<h2>Adds a column to the Row</h2>
+<pre>addColumn(\Webbtj\Clico\Column $column) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>\Webbtj\Clico\Column</code>
+</div>
+</div></div>
+</div>
+<a id="method_distributeColumns"></a><div class="element clickable method public method_distributeColumns " data-toggle="collapse" data-target=".method_distributeColumns .collapse" title="public">
+<h2>Sets the widths of each column to fit within `$maxWidth`</h2>
+<pre>distributeColumns(integer $maxWidth, integer $numCols) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$maxWidth</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$numCols</h4>
+<code>integer</code>
+</div>
+</div></div>
+</div>
+<a id="method_getColumns"></a><div class="element clickable method public method_getColumns " data-toggle="collapse" data-target=".method_getColumns .collapse" title="public">
+<h2>Get the columns</h2>
+<pre>getColumns() : Array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>Array</code></div>
+</div></div>
+</div>
+<a id="method_getHeaderLineCharacter"></a><div class="element clickable method public method_getHeaderLineCharacter " data-toggle="collapse" data-target=".method_getHeaderLineCharacter .collapse" title="public">
+<h2>Get the character (decorated) used to separate the header row from the body</h2>
+<pre>getHeaderLineCharacter() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_getLineCharacter"></a><div class="element clickable method public method_getLineCharacter " data-toggle="collapse" data-target=".method_getLineCharacter .collapse" title="public">
+<h2>Get the character (decorated) used to separate this row from other.</h2>
+<pre>getLineCharacter() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This will return either the <code>headerLineCharacter</code> or the <code>rowLineCharacter</code></p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_getPipeCharacter"></a><div class="element clickable method public method_getPipeCharacter " data-toggle="collapse" data-target=".method_getPipeCharacter .collapse" title="public">
+<h2>Get the character (decorated) used to separate columns</h2>
+<pre>getPipeCharacter() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_getRowLineCharacter"></a><div class="element clickable method public method_getRowLineCharacter " data-toggle="collapse" data-target=".method_getRowLineCharacter .collapse" title="public">
+<h2>Get the character (decorated) used to separate body rows</h2>
+<pre>getRowLineCharacter() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_getWidth"></a><div class="element clickable method public method_getWidth " data-toggle="collapse" data-target=".method_getWidth .collapse" title="public">
+<h2>Get the number of columns wide</h2>
+<pre>getWidth() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_isHeader"></a><div class="element clickable method public method_isHeader " data-toggle="collapse" data-target=".method_isHeader .collapse" title="public">
+<h2>Check if this Row is the header row</h2>
+<pre>isHeader() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_populate"></a><div class="element clickable method public method_populate " data-toggle="collapse" data-target=".method_populate .collapse" title="public">
+<h2>Put data into Columns</h2>
+<pre>populate(Array $data) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>Array</code>
+</div>
+</div></div>
+</div>
+<a id="method_setHeader"></a><div class="element clickable method public method_setHeader " data-toggle="collapse" data-target=".method_setHeader .collapse" title="public">
+<h2>Set this Row as the Table header</h2>
+<pre>setHeader() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_setHeaderLineCharacter"></a><div class="element clickable method public method_setHeaderLineCharacter " data-toggle="collapse" data-target=".method_setHeaderLineCharacter .collapse" title="public">
+<h2>Set the (decorated) character used to separate the header row from the body</h2>
+<pre>setHeaderLineCharacter(\Webbtj\Clico\Text $line) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$line</h4>
+<code>\Webbtj\Clico\Text</code>
+</div>
+</div></div>
+</div>
+<a id="method_setPipeCharacter"></a><div class="element clickable method public method_setPipeCharacter " data-toggle="collapse" data-target=".method_setPipeCharacter .collapse" title="public">
+<h2>Set the (decorated) character used to separate columns</h2>
+<pre>setPipeCharacter(\Webbtj\Clico\Text $pipe) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pipe</h4>
+<code>\Webbtj\Clico\Text</code>
+</div>
+</div></div>
+</div>
+<a id="method_setRowLineCharacter"></a><div class="element clickable method public method_setRowLineCharacter " data-toggle="collapse" data-target=".method_setRowLineCharacter .collapse" title="public">
+<h2>Set the (decorated) charater used to separate body rows</h2>
+<pre>setRowLineCharacter(\Webbtj\Clico\Text $line) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$line</h4>
+<code>\Webbtj\Clico\Text</code>
+</div>
+</div></div>
+</div>
+<a id="method_unsetHeader"></a><div class="element clickable method public method_unsetHeader " data-toggle="collapse" data-target=".method_unsetHeader .collapse" title="public">
+<h2>Make the row not the header</h2>
+<pre>unsetHeader() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_verticalConform"></a><div class="element clickable method public method_verticalConform " data-toggle="collapse" data-target=".method_verticalConform .collapse" title="public">
+<h2>Make all columns in the row the same height (stretch shorter columns)</h2>
+<pre>verticalConform() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_columns"> </a><div class="element clickable property private property_columns" data-toggle="collapse" data-target=".property_columns .collapse" title="private">
+<h2>$columns</h2>
+<pre>$columns </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_distributedWidth"> </a><div class="element clickable property private property_distributedWidth" data-toggle="collapse" data-target=".property_distributedWidth .collapse" title="private">
+<h2>$distributedWidth</h2>
+<pre>$distributedWidth </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>0</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_headerLineCharacter"> </a><div class="element clickable property private property_headerLineCharacter" data-toggle="collapse" data-target=".property_headerLineCharacter .collapse" title="private">
+<h2>$headerLineCharacter</h2>
+<pre>$headerLineCharacter </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_height"> </a><div class="element clickable property private property_height" data-toggle="collapse" data-target=".property_height .collapse" title="private">
+<h2>$height</h2>
+<pre>$height </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_isHeader"> </a><div class="element clickable property private property_isHeader" data-toggle="collapse" data-target=".property_isHeader .collapse" title="private">
+<h2>$isHeader</h2>
+<pre>$isHeader </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>false</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_pipeCharacter"> </a><div class="element clickable property private property_pipeCharacter" data-toggle="collapse" data-target=".property_pipeCharacter .collapse" title="private">
+<h2>$pipeCharacter</h2>
+<pre>$pipeCharacter </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_rowLineCharacter"> </a><div class="element clickable property private property_rowLineCharacter" data-toggle="collapse" data-target=".property_rowLineCharacter .collapse" title="private">
+<h2>$rowLineCharacter</h2>
+<pre>$rowLineCharacter </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2019-11-08T09:34:26-04:00.<br></footer></div>
+</div>
+</body>
+</html>

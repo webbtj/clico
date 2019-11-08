@@ -41,9 +41,7 @@ class Text
     private $weight;
 
     /**
-     * Constructor.
-     * 
-     * Can optionally set the text on instantiation.
+     * Constructor. Can optionally set the text on instantiation.
      *
      * @param String $string
      */
@@ -205,7 +203,7 @@ class Text
      * @param boolean $setAll
      * @return Text
      */
-    public function setDefault($setAll = false)
+    public function default($setAll = false)
     {
         if($this->opened == static::$FOREGROUND_OPENED || $setAll){
             $this->foreground = static::$FG_DEFAULT;

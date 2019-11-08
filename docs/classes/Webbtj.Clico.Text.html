@@ -1,0 +1,909 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Clico » \Webbtj\Clico\Text</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Clico</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Webbtj.html"><i class="icon-th"></i> Webbtj</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">50</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct() :: Constructor."><span class="description">Constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___toString" title="__toString() :: Renders decorated text."><span class="description">Renders decorated text.</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_b" title="b() :: Alias of `heavyWeight()`"><span class="description">Alias of `heavyWeight()`</span><pre>b()</pre></a></li>
+<li class="method public "><a href="#method_background" title="background() :: Direct future colour methods to affect the background colour."><span class="description">Direct future colour methods to affect the background colour.</span><pre>background()</pre></a></li>
+<li class="method public "><a href="#method_black" title="black() :: Set the colour (background or foreground) to black"><span class="description">Set the colour (background or foreground) to black</span><pre>black()</pre></a></li>
+<li class="method public "><a href="#method_blink" title="blink() :: Make the text blink/flash"><span class="description">Make the text blink/flash</span><pre>blink()</pre></a></li>
+<li class="method public "><a href="#method_blue" title="blue() :: Set the colour (background or foreground) to blue"><span class="description">Set the colour (background or foreground) to blue</span><pre>blue()</pre></a></li>
+<li class="method public "><a href="#method_bold" title="bold() :: Alias of `heavyWeight()`"><span class="description">Alias of `heavyWeight()`</span><pre>bold()</pre></a></li>
+<li class="method public "><a href="#method_cyan" title="cyan() :: Set the colour (background or foreground) to cyan"><span class="description">Set the colour (background or foreground) to cyan</span><pre>cyan()</pre></a></li>
+<li class="method public "><a href="#method_dark" title="dark() :: Make future colour assignments their dark variant"><span class="description">Make future colour assignments their dark variant</span><pre>dark()</pre></a></li>
+<li class="method public "><a href="#method_darken" title="darken() :: Make the most recent colour assignment (background/foreground) its dark variant."><span class="description">Make the most recent colour assignment (background/foreground) its dark variant.</span><pre>darken()</pre></a></li>
+<li class="method public "><a href="#method_dim" title="dim() :: Alias of `lightWeight()`"><span class="description">Alias of `lightWeight()`</span><pre>dim()</pre></a></li>
+<li class="method public "><a href="#method_flash" title="flash() :: Alias of `blink()`"><span class="description">Alias of `blink()`</span><pre>flash()</pre></a></li>
+<li class="method public "><a href="#method_foreground" title="foreground() :: Direct future colour methods to affect the foreground colour."><span class="description">Direct future colour methods to affect the foreground colour.</span><pre>foreground()</pre></a></li>
+<li class="method public "><a href="#method_getText" title="getText() :: Get the undecorated text value"><span class="description">Get the undecorated text value</span><pre>getText()</pre></a></li>
+<li class="method public "><a href="#method_green" title="green() :: Set the colour (background or foreground) to green"><span class="description">Set the colour (background or foreground) to green</span><pre>green()</pre></a></li>
+<li class="method public "><a href="#method_heavyWeight" title="heavyWeight() :: Make the text bold"><span class="description">Make the text bold</span><pre>heavyWeight()</pre></a></li>
+<li class="method public "><a href="#method_hidden" title="hidden() :: Make the text invisible"><span class="description">Make the text invisible</span><pre>hidden()</pre></a></li>
+<li class="method public "><a href="#method_hide" title="hide() :: Alias of `hidden()`"><span class="description">Alias of `hidden()`</span><pre>hide()</pre></a></li>
+<li class="method public "><a href="#method_highlight" title="highlight() :: Make the text highlighted (invert background and foregroune colours)"><span class="description">Make the text highlighted (invert background and foregroune colours)</span><pre>highlight()</pre></a></li>
+<li class="method public "><a href="#method_length" title="length() :: Get the length of the undecorated string"><span class="description">Get the length of the undecorated string</span><pre>length()</pre></a></li>
+<li class="method public "><a href="#method_light" title="light() :: Make future colour assignments their light variant"><span class="description">Make future colour assignments their light variant</span><pre>light()</pre></a></li>
+<li class="method public "><a href="#method_lightWeight" title="lightWeight() :: Make the text light weight/thin/dim"><span class="description">Make the text light weight/thin/dim</span><pre>lightWeight()</pre></a></li>
+<li class="method public "><a href="#method_lighten" title="lighten() :: Make the most recent colour assignment (background/foreground) its light variant."><span class="description">Make the most recent colour assignment (background/foreground) its light variant.</span><pre>lighten()</pre></a></li>
+<li class="method public "><a href="#method_magenta" title="magenta() :: Set the colour (background or foreground) to magenta"><span class="description">Set the colour (background or foreground) to magenta</span><pre>magenta()</pre></a></li>
+<li class="method public "><a href="#method_normal" title="normal() :: Alias of `normalWeight()`"><span class="description">Alias of `normalWeight()`</span><pre>normal()</pre></a></li>
+<li class="method public "><a href="#method_normalWeight" title="normalWeight() :: Make the text normal/default weight"><span class="description">Make the text normal/default weight</span><pre>normalWeight()</pre></a></li>
+<li class="method public "><a href="#method_rainbow" title="rainbow() :: Experimental: Make the text multi-coloured"><span class="description">Experimental: Make the text multi-coloured</span><pre>rainbow()</pre></a></li>
+<li class="method public "><a href="#method_red" title="red() :: Set the colour (background or foreground) to red"><span class="description">Set the colour (background or foreground) to red</span><pre>red()</pre></a></li>
+<li class="method public "><a href="#method_repeat" title="repeat() :: Repeat the text property when rendering"><span class="description">Repeat the text property when rendering</span><pre>repeat()</pre></a></li>
+<li class="method public "><a href="#method_setDefault" title="setDefault() :: Set the active colour property to its default. Pass $setAll = true to
+set both the background and foreground colours to their default."><span class="description">Set the active colour property to its default. Pass $setAll = true to
+set both the background and foreground colours to their default.</span><pre>setDefault()</pre></a></li>
+<li class="method public "><a href="#method_strong" title="strong() :: Alias of `heavyWeight()`"><span class="description">Alias of `heavyWeight()`</span><pre>strong()</pre></a></li>
+<li class="method public "><a href="#method_testPattern" title="testPattern() :: Experimental: Output a test pattern"><span class="description">Experimental: Output a test pattern</span><pre>testPattern()</pre></a></li>
+<li class="method public "><a href="#method_text" title="text() :: Set the (undecorated) string property"><span class="description">Set the (undecorated) string property</span><pre>text()</pre></a></li>
+<li class="method public "><a href="#method_thin" title="thin() :: Alias of `lightWeight()`"><span class="description">Alias of `lightWeight()`</span><pre>thin()</pre></a></li>
+<li class="method public "><a href="#method_u" title="u() :: Alias of `underline()`"><span class="description">Alias of `underline()`</span><pre>u()</pre></a></li>
+<li class="method public "><a href="#method_underline" title="underline() :: Make the text underlined"><span class="description">Make the text underlined</span><pre>underline()</pre></a></li>
+<li class="method public "><a href="#method_white" title="white() :: Set the colour (background or foreground) to white/grey"><span class="description">Set the colour (background or foreground) to white/grey</span><pre>white()</pre></a></li>
+<li class="method public "><a href="#method_yellow" title="yellow() :: Set the colour (background or foreground) to yellow"><span class="description">Set the colour (background or foreground) to yellow</span><pre>yellow()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_assignColour" title="assignColour() :: Set the colour property"><span class="description">Set the colour property</span><pre>assignColour()</pre></a></li>
+<li class="method private "><a href="#method_colourMap" title="colourMap() :: The index of available colours and their numeric values"><span class="description">The index of available colours and their numeric values</span><pre>colourMap()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul>
+<li class="property public "><a href="#property_BACKGROUND_OPENED" title="$BACKGROUND_OPENED() :: "><span class="description"></span><pre>$BACKGROUND_OPENED</pre></a></li>
+<li class="property public "><a href="#property_BG_DARK" title="$BG_DARK() :: "><span class="description"></span><pre>$BG_DARK</pre></a></li>
+<li class="property public "><a href="#property_BG_DEFAULT" title="$BG_DEFAULT() :: "><span class="description"></span><pre>$BG_DEFAULT</pre></a></li>
+<li class="property public "><a href="#property_BG_LIGHT" title="$BG_LIGHT() :: "><span class="description"></span><pre>$BG_LIGHT</pre></a></li>
+<li class="property public "><a href="#property_BLINK" title="$BLINK() :: "><span class="description"></span><pre>$BLINK</pre></a></li>
+<li class="property public "><a href="#property_DARK_SHADE" title="$DARK_SHADE() :: "><span class="description"></span><pre>$DARK_SHADE</pre></a></li>
+<li class="property public "><a href="#property_FG_DARK" title="$FG_DARK() :: "><span class="description"></span><pre>$FG_DARK</pre></a></li>
+<li class="property public "><a href="#property_FG_DEFAULT" title="$FG_DEFAULT() :: "><span class="description"></span><pre>$FG_DEFAULT</pre></a></li>
+<li class="property public "><a href="#property_FG_LIGHT" title="$FG_LIGHT() :: "><span class="description"></span><pre>$FG_LIGHT</pre></a></li>
+<li class="property public "><a href="#property_FOREGROUND_OPENED" title="$FOREGROUND_OPENED() :: "><span class="description"></span><pre>$FOREGROUND_OPENED</pre></a></li>
+<li class="property public "><a href="#property_HIDDEN" title="$HIDDEN() :: "><span class="description"></span><pre>$HIDDEN</pre></a></li>
+<li class="property public "><a href="#property_HIGHLIGHT" title="$HIGHLIGHT() :: "><span class="description"></span><pre>$HIGHLIGHT</pre></a></li>
+<li class="property public "><a href="#property_LIGHT_SHADE" title="$LIGHT_SHADE() :: "><span class="description"></span><pre>$LIGHT_SHADE</pre></a></li>
+<li class="property public "><a href="#property_UNDERLINE" title="$UNDERLINE() :: "><span class="description"></span><pre>$UNDERLINE</pre></a></li>
+<li class="property public "><a href="#property_WEIGHT_HEAVY" title="$WEIGHT_HEAVY() :: "><span class="description"></span><pre>$WEIGHT_HEAVY</pre></a></li>
+<li class="property public "><a href="#property_WEIGHT_LIGHT" title="$WEIGHT_LIGHT() :: "><span class="description"></span><pre>$WEIGHT_LIGHT</pre></a></li>
+<li class="property public "><a href="#property_WEIGHT_NORMAL" title="$WEIGHT_NORMAL() :: "><span class="description"></span><pre>$WEIGHT_NORMAL</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_background" title="$background() :: "><span class="description"></span><pre>$background</pre></a></li>
+<li class="property private "><a href="#property_blink" title="$blink() :: "><span class="description"></span><pre>$blink</pre></a></li>
+<li class="property private "><a href="#property_foreground" title="$foreground() :: "><span class="description"></span><pre>$foreground</pre></a></li>
+<li class="property private "><a href="#property_hidden" title="$hidden() :: "><span class="description"></span><pre>$hidden</pre></a></li>
+<li class="property private "><a href="#property_highlight" title="$highlight() :: "><span class="description"></span><pre>$highlight</pre></a></li>
+<li class="property private "><a href="#property_opened" title="$opened() :: "><span class="description"></span><pre>$opened</pre></a></li>
+<li class="property private "><a href="#property_repeat" title="$repeat() :: "><span class="description"></span><pre>$repeat</pre></a></li>
+<li class="property private "><a href="#property_shade" title="$shade() :: "><span class="description"></span><pre>$shade</pre></a></li>
+<li class="property private "><a href="#property_string" title="$string() :: "><span class="description"></span><pre>$string</pre></a></li>
+<li class="property private "><a href="#property_underline" title="$underline() :: "><span class="description"></span><pre>$underline</pre></a></li>
+<li class="property private "><a href="#property_weight" title="$weight() :: "><span class="description"></span><pre>$weight</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\Webbtj\Clico\Text"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Webbtj.html">Webbtj</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Webbtj.Clico.html">Clico</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Webbtj.Clico.Text.html">Text</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">The Clico Text class allows for text decorating for the CLI stdOut.</p>
+<div class="details">
+<div class="long_description"><p>Text and backgrounds can be coloured; text weight can be set as well as
+Other effects such as blinking, highlighting, and underlining.</p></div>
+<table class="table table-bordered"><tr>
+<th>package</th>
+<td><a href="../packages/Default.html">Default</a></td>
+</tr></table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>Constructor.</h2>
+<pre>__construct(String $string<code> = null</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Can optionally set the text on instantiation.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>String</code>
+</div>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString " data-toggle="collapse" data-target=".method___toString .collapse" title="public">
+<h2>Renders decorated text.</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_b"></a><div class="element clickable method public method_b " data-toggle="collapse" data-target=".method_b .collapse" title="public">
+<h2>Alias of `heavyWeight()`</h2>
+<pre>b() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_background"></a><div class="element clickable method public method_background " data-toggle="collapse" data-target=".method_background .collapse" title="public">
+<h2>Direct future colour methods to affect the background colour.</h2>
+<pre>background() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_black"></a><div class="element clickable method public method_black " data-toggle="collapse" data-target=".method_black .collapse" title="public">
+<h2>Set the colour (background or foreground) to black</h2>
+<pre>black() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_blink"></a><div class="element clickable method public method_blink " data-toggle="collapse" data-target=".method_blink .collapse" title="public">
+<h2>Make the text blink/flash</h2>
+<pre>blink() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_blue"></a><div class="element clickable method public method_blue " data-toggle="collapse" data-target=".method_blue .collapse" title="public">
+<h2>Set the colour (background or foreground) to blue</h2>
+<pre>blue() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_bold"></a><div class="element clickable method public method_bold " data-toggle="collapse" data-target=".method_bold .collapse" title="public">
+<h2>Alias of `heavyWeight()`</h2>
+<pre>bold() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_cyan"></a><div class="element clickable method public method_cyan " data-toggle="collapse" data-target=".method_cyan .collapse" title="public">
+<h2>Set the colour (background or foreground) to cyan</h2>
+<pre>cyan() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_dark"></a><div class="element clickable method public method_dark " data-toggle="collapse" data-target=".method_dark .collapse" title="public">
+<h2>Make future colour assignments their dark variant</h2>
+<pre>dark() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_darken"></a><div class="element clickable method public method_darken " data-toggle="collapse" data-target=".method_darken .collapse" title="public">
+<h2>Make the most recent colour assignment (background/foreground) its dark variant.</h2>
+<pre>darken() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_dim"></a><div class="element clickable method public method_dim " data-toggle="collapse" data-target=".method_dim .collapse" title="public">
+<h2>Alias of `lightWeight()`</h2>
+<pre>dim() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_flash"></a><div class="element clickable method public method_flash " data-toggle="collapse" data-target=".method_flash .collapse" title="public">
+<h2>Alias of `blink()`</h2>
+<pre>flash() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_foreground"></a><div class="element clickable method public method_foreground " data-toggle="collapse" data-target=".method_foreground .collapse" title="public">
+<h2>Direct future colour methods to affect the foreground colour.</h2>
+<pre>foreground() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_getText"></a><div class="element clickable method public method_getText " data-toggle="collapse" data-target=".method_getText .collapse" title="public">
+<h2>Get the undecorated text value</h2>
+<pre>getText() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_green"></a><div class="element clickable method public method_green " data-toggle="collapse" data-target=".method_green .collapse" title="public">
+<h2>Set the colour (background or foreground) to green</h2>
+<pre>green() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_heavyWeight"></a><div class="element clickable method public method_heavyWeight " data-toggle="collapse" data-target=".method_heavyWeight .collapse" title="public">
+<h2>Make the text bold</h2>
+<pre>heavyWeight() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_hidden"></a><div class="element clickable method public method_hidden " data-toggle="collapse" data-target=".method_hidden .collapse" title="public">
+<h2>Make the text invisible</h2>
+<pre>hidden() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_hide"></a><div class="element clickable method public method_hide " data-toggle="collapse" data-target=".method_hide .collapse" title="public">
+<h2>Alias of `hidden()`</h2>
+<pre>hide() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_highlight"></a><div class="element clickable method public method_highlight " data-toggle="collapse" data-target=".method_highlight .collapse" title="public">
+<h2>Make the text highlighted (invert background and foregroune colours)</h2>
+<pre>highlight() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_length"></a><div class="element clickable method public method_length " data-toggle="collapse" data-target=".method_length .collapse" title="public">
+<h2>Get the length of the undecorated string</h2>
+<pre>length() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_light"></a><div class="element clickable method public method_light " data-toggle="collapse" data-target=".method_light .collapse" title="public">
+<h2>Make future colour assignments their light variant</h2>
+<pre>light() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_lightWeight"></a><div class="element clickable method public method_lightWeight " data-toggle="collapse" data-target=".method_lightWeight .collapse" title="public">
+<h2>Make the text light weight/thin/dim</h2>
+<pre>lightWeight() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_lighten"></a><div class="element clickable method public method_lighten " data-toggle="collapse" data-target=".method_lighten .collapse" title="public">
+<h2>Make the most recent colour assignment (background/foreground) its light variant.</h2>
+<pre>lighten() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_magenta"></a><div class="element clickable method public method_magenta " data-toggle="collapse" data-target=".method_magenta .collapse" title="public">
+<h2>Set the colour (background or foreground) to magenta</h2>
+<pre>magenta() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_normal"></a><div class="element clickable method public method_normal " data-toggle="collapse" data-target=".method_normal .collapse" title="public">
+<h2>Alias of `normalWeight()`</h2>
+<pre>normal() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_normalWeight"></a><div class="element clickable method public method_normalWeight " data-toggle="collapse" data-target=".method_normalWeight .collapse" title="public">
+<h2>Make the text normal/default weight</h2>
+<pre>normalWeight() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_rainbow"></a><div class="element clickable method public method_rainbow " data-toggle="collapse" data-target=".method_rainbow .collapse" title="public">
+<h2>Experimental: Make the text multi-coloured</h2>
+<pre>rainbow() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_red"></a><div class="element clickable method public method_red " data-toggle="collapse" data-target=".method_red .collapse" title="public">
+<h2>Set the colour (background or foreground) to red</h2>
+<pre>red() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_repeat"></a><div class="element clickable method public method_repeat " data-toggle="collapse" data-target=".method_repeat .collapse" title="public">
+<h2>Repeat the text property when rendering</h2>
+<pre>repeat(integer $repeat) : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$repeat</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_setDefault"></a><div class="element clickable method public method_setDefault " data-toggle="collapse" data-target=".method_setDefault .collapse" title="public">
+<h2>Set the active colour property to its default. Pass $setAll = true to
+set both the background and foreground colours to their default.</h2>
+<pre>setDefault(boolean $setAll<code> = false</code>) : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$setAll</h4>
+<code>boolean</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_strong"></a><div class="element clickable method public method_strong " data-toggle="collapse" data-target=".method_strong .collapse" title="public">
+<h2>Alias of `heavyWeight()`</h2>
+<pre>strong() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_testPattern"></a><div class="element clickable method public method_testPattern " data-toggle="collapse" data-target=".method_testPattern .collapse" title="public">
+<h2>Experimental: Output a test pattern</h2>
+<pre>testPattern(integer $width<code> = 10</code>) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$width</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_text"></a><div class="element clickable method public method_text " data-toggle="collapse" data-target=".method_text .collapse" title="public">
+<h2>Set the (undecorated) string property</h2>
+<pre>text(String $string) : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>String</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_thin"></a><div class="element clickable method public method_thin " data-toggle="collapse" data-target=".method_thin .collapse" title="public">
+<h2>Alias of `lightWeight()`</h2>
+<pre>thin() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_u"></a><div class="element clickable method public method_u " data-toggle="collapse" data-target=".method_u .collapse" title="public">
+<h2>Alias of `underline()`</h2>
+<pre>u() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_underline"></a><div class="element clickable method public method_underline " data-toggle="collapse" data-target=".method_underline .collapse" title="public">
+<h2>Make the text underlined</h2>
+<pre>underline() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_white"></a><div class="element clickable method public method_white " data-toggle="collapse" data-target=".method_white .collapse" title="public">
+<h2>Set the colour (background or foreground) to white/grey</h2>
+<pre>white() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_yellow"></a><div class="element clickable method public method_yellow " data-toggle="collapse" data-target=".method_yellow .collapse" title="public">
+<h2>Set the colour (background or foreground) to yellow</h2>
+<pre>yellow() : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_assignColour"></a><div class="element clickable method private method_assignColour " data-toggle="collapse" data-target=".method_assignColour .collapse" title="private">
+<h2>Set the colour property</h2>
+<pre>assignColour(integer $colour) : \Webbtj\Clico\Text</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$colour</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Webbtj\Clico\Text</code></div>
+</div></div>
+</div>
+<a id="method_colourMap"></a><div class="element clickable method private method_colourMap " data-toggle="collapse" data-target=".method_colourMap .collapse" title="private">
+<h2>The index of available colours and their numeric values</h2>
+<pre>colourMap() : Array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>Array</code></div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_BACKGROUND_OPENED"> </a><div class="element clickable property public property_BACKGROUND_OPENED" data-toggle="collapse" data-target=".property_BACKGROUND_OPENED .collapse" title="public">
+<h2>$BACKGROUND_OPENED</h2>
+<pre>$BACKGROUND_OPENED </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>'background'</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_BG_DARK"> </a><div class="element clickable property public property_BG_DARK" data-toggle="collapse" data-target=".property_BG_DARK .collapse" title="public">
+<h2>$BG_DARK</h2>
+<pre>$BG_DARK </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>40</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_BG_DEFAULT"> </a><div class="element clickable property public property_BG_DEFAULT" data-toggle="collapse" data-target=".property_BG_DEFAULT .collapse" title="public">
+<h2>$BG_DEFAULT</h2>
+<pre>$BG_DEFAULT </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>49</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_BG_LIGHT"> </a><div class="element clickable property public property_BG_LIGHT" data-toggle="collapse" data-target=".property_BG_LIGHT .collapse" title="public">
+<h2>$BG_LIGHT</h2>
+<pre>$BG_LIGHT </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>100</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_BLINK"> </a><div class="element clickable property public property_BLINK" data-toggle="collapse" data-target=".property_BLINK .collapse" title="public">
+<h2>$BLINK</h2>
+<pre>$BLINK </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>5</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_DARK_SHADE"> </a><div class="element clickable property public property_DARK_SHADE" data-toggle="collapse" data-target=".property_DARK_SHADE .collapse" title="public">
+<h2>$DARK_SHADE</h2>
+<pre>$DARK_SHADE </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>'dark'</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_FG_DARK"> </a><div class="element clickable property public property_FG_DARK" data-toggle="collapse" data-target=".property_FG_DARK .collapse" title="public">
+<h2>$FG_DARK</h2>
+<pre>$FG_DARK </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>30</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_FG_DEFAULT"> </a><div class="element clickable property public property_FG_DEFAULT" data-toggle="collapse" data-target=".property_FG_DEFAULT .collapse" title="public">
+<h2>$FG_DEFAULT</h2>
+<pre>$FG_DEFAULT </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>39</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_FG_LIGHT"> </a><div class="element clickable property public property_FG_LIGHT" data-toggle="collapse" data-target=".property_FG_LIGHT .collapse" title="public">
+<h2>$FG_LIGHT</h2>
+<pre>$FG_LIGHT </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>90</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_FOREGROUND_OPENED"> </a><div class="element clickable property public property_FOREGROUND_OPENED" data-toggle="collapse" data-target=".property_FOREGROUND_OPENED .collapse" title="public">
+<h2>$FOREGROUND_OPENED</h2>
+<pre>$FOREGROUND_OPENED </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>'foreground'</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_HIDDEN"> </a><div class="element clickable property public property_HIDDEN" data-toggle="collapse" data-target=".property_HIDDEN .collapse" title="public">
+<h2>$HIDDEN</h2>
+<pre>$HIDDEN </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>8</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_HIGHLIGHT"> </a><div class="element clickable property public property_HIGHLIGHT" data-toggle="collapse" data-target=".property_HIGHLIGHT .collapse" title="public">
+<h2>$HIGHLIGHT</h2>
+<pre>$HIGHLIGHT </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>7</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_LIGHT_SHADE"> </a><div class="element clickable property public property_LIGHT_SHADE" data-toggle="collapse" data-target=".property_LIGHT_SHADE .collapse" title="public">
+<h2>$LIGHT_SHADE</h2>
+<pre>$LIGHT_SHADE </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>'light'</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_UNDERLINE"> </a><div class="element clickable property public property_UNDERLINE" data-toggle="collapse" data-target=".property_UNDERLINE .collapse" title="public">
+<h2>$UNDERLINE</h2>
+<pre>$UNDERLINE </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>4</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_WEIGHT_HEAVY"> </a><div class="element clickable property public property_WEIGHT_HEAVY" data-toggle="collapse" data-target=".property_WEIGHT_HEAVY .collapse" title="public">
+<h2>$WEIGHT_HEAVY</h2>
+<pre>$WEIGHT_HEAVY </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>1</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_WEIGHT_LIGHT"> </a><div class="element clickable property public property_WEIGHT_LIGHT" data-toggle="collapse" data-target=".property_WEIGHT_LIGHT .collapse" title="public">
+<h2>$WEIGHT_LIGHT</h2>
+<pre>$WEIGHT_LIGHT </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>2</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_WEIGHT_NORMAL"> </a><div class="element clickable property public property_WEIGHT_NORMAL" data-toggle="collapse" data-target=".property_WEIGHT_NORMAL .collapse" title="public">
+<h2>$WEIGHT_NORMAL</h2>
+<pre>$WEIGHT_NORMAL </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>0</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_background"> </a><div class="element clickable property private property_background" data-toggle="collapse" data-target=".property_background .collapse" title="private">
+<h2>$background</h2>
+<pre>$background </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_blink"> </a><div class="element clickable property private property_blink" data-toggle="collapse" data-target=".property_blink .collapse" title="private">
+<h2>$blink</h2>
+<pre>$blink </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_foreground"> </a><div class="element clickable property private property_foreground" data-toggle="collapse" data-target=".property_foreground .collapse" title="private">
+<h2>$foreground</h2>
+<pre>$foreground </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_hidden"> </a><div class="element clickable property private property_hidden" data-toggle="collapse" data-target=".property_hidden .collapse" title="private">
+<h2>$hidden</h2>
+<pre>$hidden </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_highlight"> </a><div class="element clickable property private property_highlight" data-toggle="collapse" data-target=".property_highlight .collapse" title="private">
+<h2>$highlight</h2>
+<pre>$highlight </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_opened"> </a><div class="element clickable property private property_opened" data-toggle="collapse" data-target=".property_opened .collapse" title="private">
+<h2>$opened</h2>
+<pre>$opened </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_repeat"> </a><div class="element clickable property private property_repeat" data-toggle="collapse" data-target=".property_repeat .collapse" title="private">
+<h2>$repeat</h2>
+<pre>$repeat </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>1</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_shade"> </a><div class="element clickable property private property_shade" data-toggle="collapse" data-target=".property_shade .collapse" title="private">
+<h2>$shade</h2>
+<pre>$shade </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_string"> </a><div class="element clickable property private property_string" data-toggle="collapse" data-target=".property_string .collapse" title="private">
+<h2>$string</h2>
+<pre>$string </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_underline"> </a><div class="element clickable property private property_underline" data-toggle="collapse" data-target=".property_underline .collapse" title="private">
+<h2>$underline</h2>
+<pre>$underline </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_weight"> </a><div class="element clickable property private property_weight" data-toggle="collapse" data-target=".property_weight .collapse" title="private">
+<h2>$weight</h2>
+<pre>$weight </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2019-11-08T09:34:26-04:00.<br></footer></div>
+</div>
+</body>
+</html>
