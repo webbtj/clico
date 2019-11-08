@@ -20,6 +20,8 @@ class Table
     private $rows = [];    
 
     /**
+     * Call Text decorator methods
+     * 
      * A catch-all used to send Text decoration methods down to table column(s)
      *
      * @param string $method
@@ -45,7 +47,9 @@ class Table
     }
 
     /**
-     * Constructor. Can optionally populate the data. Can optionally set the
+     * Constructor
+     * 
+     * Can optionally populate the data. Can optionally set the
      * first row of data as the header row.
      *
      * @param Array $data
@@ -80,6 +84,8 @@ class Table
     }
 
     /**
+     * Add a header row
+     * 
      * Add a header row. Unsets the previous header row.
      *
      * @param Array $row
@@ -154,6 +160,8 @@ class Table
     }
 
     /**
+     * Get the header separator character
+     * 
      * Get the character (decorated) used to separate the header row from the body
      *
      * @return Text
@@ -164,7 +172,7 @@ class Table
     }
 
     /**
-     * Get the number of rows high the table is
+     * Get the number of rows high
      *
      * @return void
      */
@@ -174,6 +182,8 @@ class Table
     }
 
     /**
+     * Get the column separator character
+     * 
      * Get the character (decorated) used to separate columns
      *
      * @return Text
@@ -184,6 +194,8 @@ class Table
     }
 
     /**
+     * Get the row separator character
+     * 
      * Get the character (decorated) used to separate body rows
      *
      * @return Text
@@ -194,7 +206,7 @@ class Table
     }
 
     /**
-     * Get the number of columns wide the table is
+     * Get the number of columns wide
      *
      * @return integer
      */
@@ -208,6 +220,8 @@ class Table
     }
 
     /**
+     * Format table, bulk add rows
+     * 
      * Reformat Rows' and Columns' widths, heights, and separation characters as necessary.
      * Optionally add rows of data to the table
      *
@@ -260,6 +274,8 @@ class Table
     }
 
     /**
+     * Set the header separator character
+     * 
      * Set the character used to separate the header row from the body
      *
      * @param String $char
@@ -277,7 +293,9 @@ class Table
     }
 
     /**
-     * Set the (decorated) character used to separate columns
+     * Set the column separator character
+     * 
+     * Set the character used to separate columns
      *
      * @param String $char
      * @param boolean $pushToRows
@@ -294,6 +312,8 @@ class Table
     }
 
     /**
+     * Set the row separator character
+     * 
      * Set the charater used to separate body rows
      *
      * @param String $char

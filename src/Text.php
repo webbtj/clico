@@ -41,7 +41,7 @@ class Text
     private $weight;
 
     /**
-     * Constructor.
+     * Constructor
      * 
      * Can optionally set the text on instantiation.
      *
@@ -58,7 +58,7 @@ class Text
     }
 
     /**
-     * Renders decorated text.
+     * Renders decorated text
      *
      * @return string
      */
@@ -96,7 +96,7 @@ class Text
     }
 
     /**
-     * Alias of `heavyWeight()`
+     * Alias of heavyWeight()
      *
      * @return Text
      */
@@ -106,6 +106,8 @@ class Text
     }
 
     /**
+     * Affect the background
+     * 
      * Direct future colour methods to affect the background colour.
      *
      * @return Text
@@ -117,6 +119,8 @@ class Text
     }
 
     /**
+     * Set the colour to black
+     * 
      * Set the colour (background or foreground) to black
      *
      * @return Text
@@ -137,6 +141,8 @@ class Text
     }
 
     /**
+     * Set the colour to blue
+     * 
      * Set the colour (background or foreground) to blue
      *
      * @return Text
@@ -147,7 +153,7 @@ class Text
     }
 
     /**
-     * Alias of `heavyWeight()`
+     * Alias of heavyWeight()
      *
      * @return Text
      */
@@ -157,6 +163,8 @@ class Text
     }
 
     /**
+     * Set the colour to cyan
+     * 
      * Set the colour (background or foreground) to cyan
      *
      * @return Text
@@ -167,6 +175,8 @@ class Text
     }
 
     /**
+     * Use dark colour variants
+     * 
      * Make future colour assignments their dark variant
      *
      * @return Text
@@ -178,6 +188,8 @@ class Text
     }
 
     /**
+     * Make the last assigned colour dark
+     * 
      * Make the most recent colour assignment (background/foreground) its dark variant.
      *
      * @return Text
@@ -199,24 +211,7 @@ class Text
     }
 
     /**
-     * Set the active colour property to its default. Pass $setAll = true to
-     * set both the background and foreground colours to their default.
-     *
-     * @param boolean $setAll
-     * @return Text
-     */
-    public function setDefault($setAll = false)
-    {
-        if($this->opened == static::$FOREGROUND_OPENED || $setAll){
-            $this->foreground = static::$FG_DEFAULT;
-        }
-        if($this->opened == static::$BACKGROUND_OPENED || $setAll){
-            $this->background = static::$BG_DEFAULT;
-        }
-    }
-
-    /**
-     * Alias of `lightWeight()`
+     * Alias of lightWeight()
      *
      * @return Text
      */
@@ -226,7 +221,7 @@ class Text
     }
 
     /**
-     * Alias of `blink()`
+     * Alias of blink()
      *
      * @return Text
      */
@@ -236,6 +231,8 @@ class Text
     }
 
     /**
+     * Affect the foreground.
+     * 
      * Direct future colour methods to affect the foreground colour.
      *
      * @return Text
@@ -257,6 +254,8 @@ class Text
     }
 
     /**
+     * Set the colour to green
+     * 
      * Set the colour (background or foreground) to green
      *
      * @return Text
@@ -289,7 +288,7 @@ class Text
     }
 
     /**
-     * Alias of `hidden()`
+     * Alias of hidden()
      *
      * @return Text
      */
@@ -299,6 +298,8 @@ class Text
     }
     
     /**
+     * Make the text highlighted
+     * 
      * Make the text highlighted (invert background and foregroune colours)
      *
      * @return Text
@@ -320,6 +321,8 @@ class Text
     }
 
     /**
+     * Use light colour variants
+     * 
      * Make future colour assignments their light variant
      *
      * @return Text
@@ -331,7 +334,10 @@ class Text
     }
 
     /**
-     * Make the most recent colour assignment (background/foreground) its light variant.
+     * Make the last assigned colour light
+     * 
+     * Make the most recent colour assignment (background/foreground) its light
+     * variant.
      *
      * @return Text
      */
@@ -363,6 +369,8 @@ class Text
     }
 
     /**
+     * Set the colour to magenta
+     * 
      * Set the colour (background or foreground) to magenta
      *
      * @return Text
@@ -373,7 +381,7 @@ class Text
     }
 
     /**
-     * Alias of `normalWeight()`
+     * Alias of normalWeight()
      *
      * @return Text
      */
@@ -415,6 +423,8 @@ class Text
     }
 
     /**
+     * Set the colour to red
+     * 
      * Set the colour (background or foreground) to red
      *
      * @return Text
@@ -437,7 +447,26 @@ class Text
     }
 
     /**
-     * Alias of `heavyWeight()`
+     * Set the active colour property to its default.
+     * 
+     * Pass $setAll = true to set both the background and foreground colours to
+     * their default.
+     *
+     * @param boolean $setAll
+     * @return Text
+     */
+    public function setDefault($setAll = false)
+    {
+        if($this->opened == static::$FOREGROUND_OPENED || $setAll){
+            $this->foreground = static::$FG_DEFAULT;
+        }
+        if($this->opened == static::$BACKGROUND_OPENED || $setAll){
+            $this->background = static::$BG_DEFAULT;
+        }
+    }
+
+    /**
+     * Alias of heavyWeight()
      *
      * @return Text
      */
@@ -478,7 +507,7 @@ class Text
     }
 
     /**
-     * Alias of `lightWeight()`
+     * Alias of lightWeight()
      *
      * @return Text
      */
@@ -488,7 +517,7 @@ class Text
     }
 
     /**
-     * Alias of `underline()`
+     * Alias of underline()
      *
      * @return Text
      */
@@ -509,6 +538,8 @@ class Text
     }
 
     /**
+     * Set the colour to white/grey
+     * 
      * Set the colour (background or foreground) to white/grey
      *
      * @return Text
@@ -519,6 +550,8 @@ class Text
     }
 
     /**
+     * Set the colour to yellow
+     * 
      * Set the colour (background or foreground) to yellow
      *
      * @return Text
