@@ -16,6 +16,7 @@ Clico is framework agnostic, just install and `use` the provided classes.
 
 Full API documentation can be found [here](http://code.webb.tj/clico/docs/),
 however the below guide should be enough to get most users started.
+[Source Code](https://github.com/webbtj/clico)
 
 ## Installation
 
@@ -124,7 +125,7 @@ cell.
 
 ### Adding Data
 
-- `__construct(Array $data, bool $firstRowAsHeader)` - the constructor can 
+- `__construct(Array $data, bool $firstRowAsHeader)` - the constructor can
 optionally set the table data and can sepcify if the first row is the header.
 - `addHeader(Array $row)` - adds the provided data as the header row. Unsets the
 previous header row.
